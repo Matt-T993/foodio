@@ -7,7 +7,7 @@ import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCX9wxo3CaGmusZHrfU9tqKP1nKvXtgH5A",
+  apiKey: process.env.FIREBASE_API,
   authDomain: "foodio-5c386.firebaseapp.com",
   projectId: "foodio-5c386",
   storageBucket: "foodio-5c386.appspot.com",
