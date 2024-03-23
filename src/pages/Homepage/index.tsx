@@ -8,45 +8,85 @@ export default function HomepagePage() {
     <>
       <Helmet>
         <title>foodie</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <meta
+          name="description"
+          content="Web site created using create-react-app"
+        />
       </Helmet>
       <div className="flex flex-col items-center justify-start w-full gap-[129px] bg-gray-50">
         <div className="flex flex-row justify-center w-full">
           <div className="flex flex-col items-center justify-start w-full gap-[70px] p-[50px] md:p-5 bg-gradient">
             <header className="flex flex-row md:flex-col justify-between items-center w-[83%] md:gap-10">
-              <Img src="images/img_logo.svg" alt="logo_one" className="h-[51px]" />
+              <Img
+                src="images/img_logo.svg"
+                alt="logo_one"
+                className="h-[51px]"
+              />
               <div className="flex flex-row sm:flex-col justify-between items-start w-[52%] md:w-full sm:gap-10">
                 <div className="flex flex-col items-center justify-start w-[9%] sm:w-full gap-[3px]">
-                  <Text size="s" as="p" className="!text-red-400 !font-opensans">
+                  <Text
+                    size="s"
+                    as="p"
+                    className="!text-red-400 !font-opensans"
+                  >
                     Home
                   </Text>
                   <div className="h-px w-full bg-red-400" />
                 </div>
-                <Text size="s" as="p" className="mt-px sm:mt-0 !text-gray-900_cc !font-opensans">
+                <Text
+                  size="s"
+                  as="p"
+                  className="mt-px sm:mt-0 !text-gray-900_cc !font-opensans"
+                >
                   Menu
                 </Text>
-                <Text size="s" as="p" className="!text-gray-900_cc !font-opensans">
+                <Text
+                  size="s"
+                  as="p"
+                  className="!text-gray-900_cc !font-opensans"
+                >
                   About us
                 </Text>
-                <Text size="s" as="p" className="!text-gray-900_cc !font-opensans">
+                <Text
+                  size="s"
+                  as="p"
+                  className="!text-gray-900_cc !font-opensans"
+                >
                   Order online
                 </Text>
-                <Text size="s" as="p" className="mt-px sm:mt-0 !text-gray-900_cc !font-opensans">
+                <Text
+                  size="s"
+                  as="p"
+                  className="mt-px sm:mt-0 !text-gray-900_cc !font-opensans"
+                >
                   Reservation
                 </Text>
                 <div className="flex flex-row justify-center">
                   <a href="#">
-                    <Text size="s" as="p" className="!text-gray-900_cc !font-opensans">
+                    <Text
+                      size="s"
+                      as="p"
+                      className="!text-gray-900_cc !font-opensans"
+                    >
                       Contact us
                     </Text>
                   </a>
                 </div>
               </div>
               <div className="flex flex-row justify-start gap-[25px]">
-                <Button color="white_A700" size="lg" shape="circle" className="w-[50px]">
+                <Button
+                  color="white_A700"
+                  size="lg"
+                  shape="circle"
+                  className="w-[50px]"
+                >
                   <Img src="images/img_group_103.svg" />
                 </Button>
-                <Button size="md" shape="round" className="sm:px-5 font-semibold min-w-[112px]">
+                <Button
+                  size="md"
+                  shape="round"
+                  className="sm:px-5 font-semibold min-w-[112px]"
+                >
                   Log in
                 </Button>
               </div>
@@ -54,7 +94,11 @@ export default function HomepagePage() {
             <div className="flex flex-row md:flex-col justify-between items-center w-full mb-5 md:gap-10 max-w-[1240px]">
               <div className="flex flex-row justify-center w-[47%] md:w-full">
                 <div className="flex flex-col items-start justify-start w-full">
-                  <Heading size="4xl" as="h1" className="flex !text-gray-900_02 !font-opensans">
+                  <Heading
+                    size="4xl"
+                    as="h1"
+                    className="flex !text-gray-900_02 !font-opensans"
+                  >
                     <span className="text-gray-900_02">
                       <>
                         Best Restaurant
@@ -65,13 +109,23 @@ export default function HomepagePage() {
                     <span className="text-red-400">Town.</span>
                   </Heading>
                   <Text as="p" className="w-[91%] mt-[15px] !text-gray-800">
-                    We provide best food in town, we provide home delivery and dine in services.
+                    We provide best food in town, we provide home delivery and
+                    dine in services.
                   </Text>
                   <div className="flex flex-row sm:flex-col justify-start mt-9 gap-6 sm:gap-5">
-                    <Button size="5xl" shape="round" className="sm:px-5 font-semibold min-w-[232px]">
+                    <Button
+                      size="5xl"
+                      shape="round"
+                      className="sm:px-5 font-semibold min-w-[232px]"
+                    >
                       Order now
                     </Button>
-                    <Button color="red_400_19" size="5xl" shape="round" className="sm:px-5 font-semibold min-w-[232px]">
+                    <Button
+                      color="red_400_19"
+                      size="5xl"
+                      shape="round"
+                      className="sm:px-5 font-semibold min-w-[232px]"
+                    >
                       Reservation
                     </Button>
                   </div>
@@ -115,7 +169,11 @@ export default function HomepagePage() {
             </div>
             <div className="flex flex-col items-start justify-start w-[31%] md:w-full mt-[91px] mr-[149px] gap-[35px] md:mt-0 md:mr-5">
               <div className="flex flex-col items-start justify-start w-full gap-4">
-                <Heading size="3xl" as="h2" className="flex w-[80%] !text-red-400 !font-tinos !leading-[110%]">
+                <Heading
+                  size="3xl"
+                  as="h2"
+                  className="flex w-[80%] !text-red-400 !font-tinos !leading-[110%]"
+                >
                   <span className="text-gray-900_02 font-opensans">
                     <>
                       Our Most <br />
@@ -125,11 +183,16 @@ export default function HomepagePage() {
                   <span className="text-red-400 font-opensans">Dish.</span>
                 </Heading>
                 <Text as="p" className="!text-gray-800_01">
-                  This dish is full of flavor and nutrition! Quinoa is a complete protein, providing all the essential
-                  amino acids your body needs, and is also a good source of fiber.
+                  This dish is full of flavor and nutrition! Quinoa is a
+                  complete protein, providing all the essential amino acids your
+                  body needs, and is also a good source of fiber.
                 </Text>
               </div>
-              <Button size="5xl" shape="round" className="sm:px-5 font-semibold min-w-[232px] sm:min-w-full">
+              <Button
+                size="5xl"
+                shape="round"
+                className="sm:px-5 font-semibold min-w-[232px] sm:min-w-full"
+              >
                 Order now
               </Button>
             </div>
@@ -145,15 +208,22 @@ export default function HomepagePage() {
             selectedTabPanelClassName="relative tab-panel--selected"
           >
             <TabList className="flex flex-row justify-between w-full gap-[146px] p-[19px] md:gap-10">
-              <Tab className="mt-1 ml-[35px] sm:ml-5 text-white-A700 text-xl font-semibold">All catagory</Tab>
+              <Tab className="mt-1 ml-[35px] sm:ml-5 text-white-A700 text-xl font-semibold">
+                All catagory
+              </Tab>
               <Tab className="text-gray-900 text-xl font-normal">Dinner</Tab>
               <Tab className="text-gray-900 text-xl font-normal">Lunch</Tab>
               <Tab className="text-gray-900 text-xl font-normal">Dessert</Tab>
-              <Tab className="mr-[51px] md:mr-5 text-gray-900 text-xl font-normal">Drink</Tab>
+              <Tab className="mr-[51px] md:mr-5 text-gray-900 text-xl font-normal">
+                Drink
+              </Tab>
             </TabList>
             <div className="flex flex-col items-center justify-start w-full gap-12">
               {[...Array(5)].map((_, index) => (
-                <TabPanel key={`tab-panel${index}`} className="items-center w-full absolute">
+                <TabPanel
+                  key={`tab-panel${index}`}
+                  className="items-center w-full absolute"
+                >
                   <div className="flex flex-col items-center justify-start w-full">
                     <div className="flex flex-col items-center justify-start w-full">
                       <div className="justify-center w-full gap-[35px] grid-cols-3 md:grid-cols-2 md:gap-5 sm:grid-cols-1 grid">
@@ -165,11 +235,20 @@ export default function HomepagePage() {
                           />
                           <div className="flex flex-col items-center justify-start w-full mb-1.5">
                             <div className="flex flex-col items-center justify-start w-full gap-[11px]">
-                              <Heading size="lg" as="h2" className="text-center">
+                              <Heading
+                                size="lg"
+                                as="h2"
+                                className="text-center"
+                              >
                                 Spaghetti
                               </Heading>
-                              <Text size="xs" as="p" className="!text-gray-800_02 text-center">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget
+                              <Text
+                                size="xs"
+                                as="p"
+                                className="!text-gray-800_02 text-center"
+                              >
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Egestas consequat mi eget
                                 auctor aliquam, diam.{" "}
                               </Text>
                             </div>
@@ -183,7 +262,10 @@ export default function HomepagePage() {
                             />
                             <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
                               <Heading as="h3">$12.05</Heading>
-                              <Button size="xl" className="sm:px-5 font-semibold min-w-[158px] rounded-lg">
+                              <Button
+                                size="xl"
+                                className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
+                              >
                                 Order now
                               </Button>
                             </div>
@@ -197,11 +279,20 @@ export default function HomepagePage() {
                           />
                           <div className="flex flex-col items-center justify-start w-full mb-1.5">
                             <div className="flex flex-col items-center justify-start w-full gap-[15px]">
-                              <Heading size="lg" as="h4" className="text-center">
+                              <Heading
+                                size="lg"
+                                as="h4"
+                                className="text-center"
+                              >
                                 Gnocchi
                               </Heading>
-                              <Text size="xs" as="p" className="!text-gray-800_02 text-center">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget
+                              <Text
+                                size="xs"
+                                as="p"
+                                className="!text-gray-800_02 text-center"
+                              >
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Egestas consequat mi eget
                                 auctor aliquam, diam.{" "}
                               </Text>
                             </div>
@@ -215,7 +306,10 @@ export default function HomepagePage() {
                             />
                             <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
                               <Heading as="h5">$12.05</Heading>
-                              <Button size="xl" className="sm:px-5 font-semibold min-w-[158px] rounded-lg">
+                              <Button
+                                size="xl"
+                                className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
+                              >
                                 Order now
                               </Button>
                             </div>
@@ -229,11 +323,20 @@ export default function HomepagePage() {
                           />
                           <div className="flex flex-col items-center justify-start w-full mb-1.5">
                             <div className="flex flex-col items-center justify-start w-full gap-[15px]">
-                              <Heading size="lg" as="h6" className="text-center">
+                              <Heading
+                                size="lg"
+                                as="h6"
+                                className="text-center"
+                              >
                                 Rovioli
                               </Heading>
-                              <Text size="xs" as="p" className="!text-gray-800_02 text-center">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget
+                              <Text
+                                size="xs"
+                                as="p"
+                                className="!text-gray-800_02 text-center"
+                              >
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Egestas consequat mi eget
                                 auctor aliquam, diam.{" "}
                               </Text>
                             </div>
@@ -247,7 +350,10 @@ export default function HomepagePage() {
                             />
                             <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
                               <Heading as="h4">$12.05</Heading>
-                              <Button size="xl" className="sm:px-5 font-semibold min-w-[158px] rounded-lg">
+                              <Button
+                                size="xl"
+                                className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
+                              >
                                 Order now
                               </Button>
                             </div>
@@ -261,11 +367,20 @@ export default function HomepagePage() {
                           />
                           <div className="flex flex-col items-center justify-start w-full mb-1.5">
                             <div className="flex flex-col items-center justify-start w-full gap-3.5">
-                              <Heading size="lg" as="h3" className="text-center">
+                              <Heading
+                                size="lg"
+                                as="h3"
+                                className="text-center"
+                              >
                                 Penne Alla Vodak
                               </Heading>
-                              <Text size="xs" as="p" className="!text-gray-800_02 text-center">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget
+                              <Text
+                                size="xs"
+                                as="p"
+                                className="!text-gray-800_02 text-center"
+                              >
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Egestas consequat mi eget
                                 auctor aliquam, diam.{" "}
                               </Text>
                             </div>
@@ -279,7 +394,10 @@ export default function HomepagePage() {
                             />
                             <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
                               <Heading as="h4">$12.05</Heading>
-                              <Button size="xl" className="sm:px-5 font-semibold min-w-[158px] rounded-lg">
+                              <Button
+                                size="xl"
+                                className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
+                              >
                                 Order now
                               </Button>
                             </div>
@@ -293,11 +411,20 @@ export default function HomepagePage() {
                           />
                           <div className="flex flex-col items-center justify-start w-full mb-1.5">
                             <div className="flex flex-col items-center justify-start w-full gap-[15px]">
-                              <Heading size="lg" as="h3" className="text-center">
+                              <Heading
+                                size="lg"
+                                as="h3"
+                                className="text-center"
+                              >
                                 Risoto
                               </Heading>
-                              <Text size="xs" as="p" className="!text-gray-800_02 text-center">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget
+                              <Text
+                                size="xs"
+                                as="p"
+                                className="!text-gray-800_02 text-center"
+                              >
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Egestas consequat mi eget
                                 auctor aliquam, diam.{" "}
                               </Text>
                             </div>
@@ -311,7 +438,10 @@ export default function HomepagePage() {
                             />
                             <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
                               <Heading as="h4">$12.05</Heading>
-                              <Button size="xl" className="sm:px-5 font-semibold min-w-[158px] rounded-lg">
+                              <Button
+                                size="xl"
+                                className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
+                              >
                                 Order now
                               </Button>
                             </div>
@@ -325,11 +455,20 @@ export default function HomepagePage() {
                           />
                           <div className="flex flex-col items-center justify-start w-full mb-1.5">
                             <div className="flex flex-col items-center justify-start w-full gap-[11px]">
-                              <Heading size="lg" as="h3" className="text-center">
+                              <Heading
+                                size="lg"
+                                as="h3"
+                                className="text-center"
+                              >
                                 Splitza Signature
                               </Heading>
-                              <Text size="xs" as="p" className="!text-gray-800_02 text-center">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget
+                              <Text
+                                size="xs"
+                                as="p"
+                                className="!text-gray-800_02 text-center"
+                              >
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Egestas consequat mi eget
                                 auctor aliquam, diam.{" "}
                               </Text>
                             </div>
@@ -343,7 +482,10 @@ export default function HomepagePage() {
                             />
                             <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
                               <Heading as="h4">$12.05</Heading>
-                              <Button size="xl" className="sm:px-5 font-semibold min-w-[158px] rounded-lg">
+                              <Button
+                                size="xl"
+                                className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
+                              >
                                 Order now
                               </Button>
                             </div>
@@ -355,7 +497,11 @@ export default function HomepagePage() {
                 </TabPanel>
               ))}
               <div className="flex flex-row justify-start items-center w-[22%] md:w-full gap-2.5">
-                <Img src="images/img_arrow_left.svg" alt="arrowleft_one" className="h-[15px] w-[15px]" />
+                <Img
+                  src="images/img_arrow_left.svg"
+                  alt="arrowleft_one"
+                  className="h-[15px] w-[15px]"
+                />
                 <div className="flex flex-row justify-between w-[71%]">
                   <div className="flex flex-col items-center justify-start h-[35px] w-[35px]">
                     <Button
@@ -386,11 +532,19 @@ export default function HomepagePage() {
                       </Button>
                     </div>
                   </div>
-                  <Button color="gray_200" size="xs" className="w-[35px] rounded">
+                  <Button
+                    color="gray_200"
+                    size="xs"
+                    className="w-[35px] rounded"
+                  >
                     <Img src="images/img_bx_bx_dots_horizontal_rounded.svg" />
                   </Button>
                 </div>
-                <Img src="images/img_akar_icons_chevron_left.svg" alt="akaricons_one" className="h-[15px] w-[15px]" />
+                <Img
+                  src="images/img_akar_icons_chevron_left.svg"
+                  alt="akaricons_one"
+                  className="h-[15px] w-[15px]"
+                />
               </div>
             </div>
           </Tabs>
@@ -449,7 +603,11 @@ export default function HomepagePage() {
                 </Text>
               </div>
             </div>
-            <Button size="5xl" shape="round" className="mt-[89px] sm:px-5 font-semibold min-w-[235px] sm:min-w-full">
+            <Button
+              size="5xl"
+              shape="round"
+              className="mt-[89px] sm:px-5 font-semibold min-w-[235px] sm:min-w-full"
+            >
               View all
             </Button>
           </div>
@@ -463,7 +621,11 @@ export default function HomepagePage() {
           <div className="flex flex-row justify-center w-full">
             <div className="flex flex-row md:flex-col justify-center items-center w-full md:gap-5">
               <div className="flex flex-col items-center justify-start h-[60px] w-[60px] z-[1]">
-                <Button color="white_A700" shape="circle" className="w-[60px] shadow-xs">
+                <Button
+                  color="white_A700"
+                  shape="circle"
+                  className="w-[60px] shadow-xs"
+                >
                   <Img src="images/img_group_30.svg" />
                 </Button>
               </div>
@@ -482,8 +644,9 @@ export default function HomepagePage() {
                             as="p"
                             className="w-[87%] bottom-[16%] right-0 left-0 m-auto !text-gray-800_01 text-center absolute"
                           >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisis ultricies at eleifend
-                            proin. Congue nibh nulla malesuada ultricies nec quam{" "}
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Facilisis ultricies at eleifend proin. Congue
+                            nibh nulla malesuada ultricies nec quam{" "}
                           </Text>
                         </div>
                       </div>
@@ -498,7 +661,11 @@ export default function HomepagePage() {
                         <Heading size="s" as="h2" className="text-center">
                           Starla Virgoun
                         </Heading>
-                        <Text size="s" as="p" className="!text-gray-800_01 text-center">
+                        <Text
+                          size="s"
+                          as="p"
+                          className="!text-gray-800_01 text-center"
+                        >
                           Financial advisor
                         </Text>
                       </div>
@@ -506,7 +673,11 @@ export default function HomepagePage() {
                   </div>
                 </div>
                 <div className="flex flex-col items-center justify-start h-[60px] w-[60px] ml-[-30px] md:ml-0">
-                  <Button color="white_A700" shape="circle" className="w-[60px] shadow-sm">
+                  <Button
+                    color="white_A700"
+                    shape="circle"
+                    className="w-[60px] shadow-sm"
+                  >
                     <Img src="images/img_group_32.svg" />
                   </Button>
                 </div>
@@ -520,10 +691,19 @@ export default function HomepagePage() {
               Hungry? We are open now..
             </Heading>
             <div className="flex flex-row sm:flex-col justify-start w-[70%] md:w-full gap-6 sm:gap-5">
-              <Button size="5xl" shape="round" className="sm:px-5 font-semibold min-w-[232px]">
+              <Button
+                size="5xl"
+                shape="round"
+                className="sm:px-5 font-semibold min-w-[232px]"
+              >
                 Order now
               </Button>
-              <Button color="white_A700_7f" size="5xl" shape="round" className="sm:px-5 font-semibold min-w-[232px]">
+              <Button
+                color="white_A700_7f"
+                size="5xl"
+                shape="round"
+                className="sm:px-5 font-semibold min-w-[232px]"
+              >
                 Reservation
               </Button>
             </div>
@@ -535,16 +715,35 @@ export default function HomepagePage() {
               <div className="flex flex-row md:flex-col justify-between items-start w-full md:gap-10">
                 <div className="flex flex-row justify-center w-[32%] md:w-full">
                   <div className="flex flex-col items-start justify-start w-full gap-[42px]">
-                    <Img src="images/img_logo_red_400.svg" alt="logo_three" className="h-[51px]" />
-                    <Text as="p">Viverra gravida morbi egestas facilisis tortor netus non duis tempor. </Text>
+                    <Img
+                      src="images/img_logo_red_400.svg"
+                      alt="logo_three"
+                      className="h-[51px]"
+                    />
+                    <Text as="p">
+                      Viverra gravida morbi egestas facilisis tortor netus non
+                      duis tempor.{" "}
+                    </Text>
                     <div className="flex flex-row justify-between w-[69%] md:w-full ml-[3px] md:ml-0">
-                      <Button color="gray_300" shape="circle" className="w-[60px]">
+                      <Button
+                        color="gray_300"
+                        shape="circle"
+                        className="w-[60px]"
+                      >
                         <Img src="images/img_group_53.png" />
                       </Button>
-                      <Button color="blue_gray_100_02" shape="circle" className="w-[60px]">
+                      <Button
+                        color="blue_gray_100_02"
+                        shape="circle"
+                        className="w-[60px]"
+                      >
                         <Img src="images/img_instagram.png" />
                       </Button>
-                      <Button color="blue_gray_100_02" shape="circle" className="w-[60px]">
+                      <Button
+                        color="blue_gray_100_02"
+                        shape="circle"
+                        className="w-[60px]"
+                      >
                         <Img src="images/img_group_51.png" />
                       </Button>
                     </div>
@@ -580,10 +779,14 @@ export default function HomepagePage() {
                     <Text as="p" className="!leading-[153%]">
                       2972 Westheimer Rd. Santa Ana, Illinois 85486{" "}
                     </Text>
-                    <a href="mailto:abc@example.com" target="_blank" rel="noreferrer">
-                      <Text size="xl" as="p" className="text-xl">
+                    <a
+                      href="mailto:abc@example.com"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {/* <Text size="xl" as="p" className="text-xl">
                         abc@example.com
-                      </Text>
+                      </Text> */}
                     </a>
                     <Text as="p">+123 4567 8901</Text>
                   </div>
