@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Heading, Button, Img } from "./..";
+import { Text, Heading, Button, Img } from "..";
 
 interface Props {
   className?: string;
@@ -7,22 +7,40 @@ interface Props {
 
 export default function Footer({ ...props }: Props) {
   return (
-    <footer {...props}>
+    <footer
+      {...props}
+      className="flex justify-center items-center w-full px-14 py-[70px] md:p-5 bg-gray-900_01"
+    >
       <div className="flex flex-row justify-center w-full px-14 py-[70px] md:p-5 bg-gray-900_01">
         <div className="flex flex-col items-center justify-center w-full mb-0.5 gap-[61px] mx-[93px] md:mx-5 max-w-[1113px]">
           <div className="flex flex-row md:flex-col justify-between items-start w-full md:gap-10">
             <div className="flex flex-row justify-center w-[32%] md:w-full">
               <div className="flex flex-col items-start justify-start w-full gap-[42px]">
-                <Img src="images/img_logo_red_400.svg" alt="logo_three" className="h-[51px]" />
-                <Text as="p">Viverra gravida morbi egestas facilisis tortor netus non duis tempor. </Text>
+                <Img
+                  src="images/img_logo_red_400.svg"
+                  alt="logo_three"
+                  className="h-[51px]"
+                />
+                <Text as="p">
+                  Viverra gravida morbi egestas facilisis tortor netus non duis
+                  tempor.{" "}
+                </Text>
                 <div className="flex flex-row justify-between w-[69%] md:w-full ml-[3px] md:ml-0">
                   <Button color="gray_300" shape="circle" className="w-[60px]">
                     <Img src="images/img_group_53.png" />
                   </Button>
-                  <Button color="blue_gray_100_02" shape="circle" className="w-[60px]">
+                  <Button
+                    color="blue_gray_100_02"
+                    shape="circle"
+                    className="w-[60px]"
+                  >
                     <Img src="images/img_instagram.png" />
                   </Button>
-                  <Button color="blue_gray_100_02" shape="circle" className="w-[60px]">
+                  <Button
+                    color="blue_gray_100_02"
+                    shape="circle"
+                    className="w-[60px]"
+                  >
                     <Img src="images/img_group_51.png" />
                   </Button>
                 </div>

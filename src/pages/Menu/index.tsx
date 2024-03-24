@@ -9,14 +9,25 @@ export default function MenuPage() {
     <>
       <Helmet>
         <title>foodie</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <meta
+          name="description"
+          content="Web site created using create-react-app"
+        />
       </Helmet>
       <div className="flex flex-col items-center justify-start w-full pt-[51px] gap-[139px] md:pt-5 bg-gray-50">
         <div className="flex flex-col items-center justify-start w-full gap-[92px] md:px-5 max-w-[1112px]">
           <header className="flex flex-row md:flex-col justify-between items-center w-full md:gap-10">
-            <Img src="images/img_logo.svg" alt="logo_one" className="h-[51px]" />
+            <Img
+              src="images/img_logo.svg"
+              alt="logo_one"
+              className="h-[51px]"
+            />
             <div className="flex flex-row sm:flex-col justify-between items-start w-[52%] md:w-full sm:gap-10">
-              <Text size="s" as="p" className="mt-px sm:mt-0 !text-gray-900_a2 !font-opensans opacity-0.8">
+              <Text
+                size="s"
+                as="p"
+                className="mt-px sm:mt-0 !text-gray-900_a2 !font-opensans opacity-0.8"
+              >
                 Home
               </Text>
               <div className="flex flex-col items-start justify-start w-[9%] sm:w-full gap-[3px]">
@@ -25,33 +36,62 @@ export default function MenuPage() {
                 </Text>
                 <div className="h-px w-full bg-red-400" />
               </div>
-              <Text size="s" as="p" className="!text-gray-900_cc !font-opensans">
+              <Text
+                size="s"
+                as="p"
+                className="!text-gray-900_cc !font-opensans"
+              >
                 About us
               </Text>
-              <Text size="s" as="p" className="!text-gray-900_cc !font-opensans">
+              <Text
+                size="s"
+                as="p"
+                className="!text-gray-900_cc !font-opensans"
+              >
                 Order online
               </Text>
-              <Text size="s" as="p" className="mt-px sm:mt-0 !text-gray-900_cc !font-opensans">
+              <Text
+                size="s"
+                as="p"
+                className="mt-px sm:mt-0 !text-gray-900_cc !font-opensans"
+              >
                 Reservation
               </Text>
               <a href="#" className="mt-px sm:mt-0">
-                <Text size="s" as="p" className="!text-gray-900_cc !font-opensans">
+                <Text
+                  size="s"
+                  as="p"
+                  className="!text-gray-900_cc !font-opensans"
+                >
                   Contact us
                 </Text>
               </a>
             </div>
             <div className="flex flex-row justify-start gap-[25px]">
-              <Button color="white_A700" size="lg" shape="circle" className="w-[50px]">
+              <Button
+                color="white_A700"
+                size="lg"
+                shape="circle"
+                className="w-[50px]"
+              >
                 <Img src="images/img_group_103.svg" />
               </Button>
-              <Button size="md" shape="round" className="sm:px-5 font-semibold min-w-[112px]">
+              <Button
+                size="md"
+                shape="round"
+                className="sm:px-5 font-semibold min-w-[112px]"
+              >
                 Log in
               </Button>
             </div>
           </header>
           <div className="flex flex-col items-center justify-start w-full">
             <div className="flex flex-col items-center justify-start w-full gap-[70px]">
-              <Heading size="3xl" as="h1" className="!font-opensans text-center">
+              <Heading
+                size="3xl"
+                as="h1"
+                className="!font-opensans text-center"
+              >
                 Our Popular Menu
               </Heading>
               <Tabs
@@ -60,17 +100,28 @@ export default function MenuPage() {
                 selectedTabPanelClassName="relative tab-panel--selected"
               >
                 <TabList className="flex flex-row justify-between w-full gap-[146px] p-[19px] md:gap-10">
-                  <Tab className="mt-1 ml-[35px] sm:ml-5 text-white-A700 text-xl font-semibold">All catagory</Tab>
-                  <Tab className="text-gray-900 text-xl font-normal">Dinner</Tab>
+                  <Tab className="mt-1 ml-[35px] sm:ml-5 text-white-A700 text-xl font-semibold">
+                    All catagory
+                  </Tab>
+                  <Tab className="text-gray-900 text-xl font-normal">
+                    Dinner
+                  </Tab>
                   <Tab className="text-gray-900 text-xl font-normal">Lunch</Tab>
-                  <Tab className="text-gray-900 text-xl font-normal">Dessert</Tab>
-                  <Tab className="mr-[51px] md:mr-5 text-gray-900 text-xl font-normal">Drink</Tab>
+                  <Tab className="text-gray-900 text-xl font-normal">
+                    Dessert
+                  </Tab>
+                  <Tab className="mr-[51px] md:mr-5 text-gray-900 text-xl font-normal">
+                    Drink
+                  </Tab>
                 </TabList>
                 <div className="flex flex-col items-center justify-start w-full gap-12">
                   <div className="flex flex-col items-center justify-start w-full">
                     <div className="flex flex-col items-center justify-start w-full gap-10">
                       {[...Array(5)].map((_, index) => (
-                        <TabPanel key={`tab-panel${index}`} className="justify-center w-full absolute">
+                        <TabPanel
+                          key={`tab-panel${index}`}
+                          className="justify-center w-full absolute"
+                        >
                           <div className="flex flex-row justify-center w-full">
                             <div className="flex flex-row md:flex-col justify-start w-full gap-[35px] md:gap-5">
                               <div className="flex flex-col items-center justify-center w-[32%] md:w-full gap-[34px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]">
@@ -81,11 +132,20 @@ export default function MenuPage() {
                                 />
                                 <div className="flex flex-col items-center justify-start w-full mb-1.5">
                                   <div className="flex flex-col items-center justify-start w-full gap-[11px]">
-                                    <Heading size="lg" as="h2" className="text-center">
+                                    <Heading
+                                      size="lg"
+                                      as="h2"
+                                      className="text-center"
+                                    >
                                       Spaghetti
                                     </Heading>
-                                    <Text size="xs" as="p" className="!text-gray-800_02 text-center">
-                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget
+                                    <Text
+                                      size="xs"
+                                      as="p"
+                                      className="!text-gray-800_02 text-center"
+                                    >
+                                      Lorem ipsum dolor sit amet, consectetur
+                                      adipiscing elit. Egestas consequat mi eget
                                       auctor aliquam, diam.{" "}
                                     </Text>
                                   </div>
@@ -99,7 +159,10 @@ export default function MenuPage() {
                                   />
                                   <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
                                     <Heading as="h3">$12.05</Heading>
-                                    <Button size="xl" className="sm:px-5 font-semibold min-w-[158px] rounded-lg">
+                                    <Button
+                                      size="xl"
+                                      className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
+                                    >
                                       Order now
                                     </Button>
                                   </div>
@@ -113,11 +176,20 @@ export default function MenuPage() {
                                 />
                                 <div className="flex flex-col items-center justify-start w-full mb-1.5">
                                   <div className="flex flex-col items-center justify-start w-full gap-[15px]">
-                                    <Heading size="lg" as="h4" className="text-center">
+                                    <Heading
+                                      size="lg"
+                                      as="h4"
+                                      className="text-center"
+                                    >
                                       Gnocchi
                                     </Heading>
-                                    <Text size="xs" as="p" className="!text-gray-800_02 text-center">
-                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget
+                                    <Text
+                                      size="xs"
+                                      as="p"
+                                      className="!text-gray-800_02 text-center"
+                                    >
+                                      Lorem ipsum dolor sit amet, consectetur
+                                      adipiscing elit. Egestas consequat mi eget
                                       auctor aliquam, diam.{" "}
                                     </Text>
                                   </div>
@@ -131,7 +203,10 @@ export default function MenuPage() {
                                   />
                                   <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
                                     <Heading as="h5">$12.05</Heading>
-                                    <Button size="xl" className="sm:px-5 font-semibold min-w-[158px] rounded-lg">
+                                    <Button
+                                      size="xl"
+                                      className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
+                                    >
                                       Order now
                                     </Button>
                                   </div>
@@ -145,11 +220,20 @@ export default function MenuPage() {
                                 />
                                 <div className="flex flex-col items-center justify-start w-full mb-1.5">
                                   <div className="flex flex-col items-center justify-start w-full gap-[15px]">
-                                    <Heading size="lg" as="h6" className="text-center">
+                                    <Heading
+                                      size="lg"
+                                      as="h6"
+                                      className="text-center"
+                                    >
                                       Rovioli
                                     </Heading>
-                                    <Text size="xs" as="p" className="!text-gray-800_02 text-center">
-                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget
+                                    <Text
+                                      size="xs"
+                                      as="p"
+                                      className="!text-gray-800_02 text-center"
+                                    >
+                                      Lorem ipsum dolor sit amet, consectetur
+                                      adipiscing elit. Egestas consequat mi eget
                                       auctor aliquam, diam.{" "}
                                     </Text>
                                   </div>
@@ -163,7 +247,10 @@ export default function MenuPage() {
                                   />
                                   <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
                                     <Heading as="h4">$12.05</Heading>
-                                    <Button size="xl" className="sm:px-5 font-semibold min-w-[158px] rounded-lg">
+                                    <Button
+                                      size="xl"
+                                      className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
+                                    >
                                       Order now
                                     </Button>
                                   </div>
@@ -182,11 +269,20 @@ export default function MenuPage() {
                           />
                           <div className="flex flex-col items-center justify-start w-full mb-1.5">
                             <div className="flex flex-col items-center justify-start w-full gap-3.5">
-                              <Heading size="lg" as="h3" className="text-center">
+                              <Heading
+                                size="lg"
+                                as="h3"
+                                className="text-center"
+                              >
                                 Penne Alla Vodak
                               </Heading>
-                              <Text size="xs" as="p" className="!text-gray-800_02 text-center">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget
+                              <Text
+                                size="xs"
+                                as="p"
+                                className="!text-gray-800_02 text-center"
+                              >
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Egestas consequat mi eget
                                 auctor aliquam, diam.{" "}
                               </Text>
                             </div>
@@ -200,7 +296,10 @@ export default function MenuPage() {
                             />
                             <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
                               <Heading as="h4">$12.05</Heading>
-                              <Button size="xl" className="sm:px-5 font-semibold min-w-[158px] rounded-lg">
+                              <Button
+                                size="xl"
+                                className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
+                              >
                                 Order now
                               </Button>
                             </div>
@@ -214,11 +313,20 @@ export default function MenuPage() {
                           />
                           <div className="flex flex-col items-center justify-start w-full mb-1.5">
                             <div className="flex flex-col items-center justify-start w-full gap-[15px]">
-                              <Heading size="lg" as="h3" className="text-center">
+                              <Heading
+                                size="lg"
+                                as="h3"
+                                className="text-center"
+                              >
                                 Risoto
                               </Heading>
-                              <Text size="xs" as="p" className="!text-gray-800_02 text-center">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget
+                              <Text
+                                size="xs"
+                                as="p"
+                                className="!text-gray-800_02 text-center"
+                              >
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Egestas consequat mi eget
                                 auctor aliquam, diam.{" "}
                               </Text>
                             </div>
@@ -232,7 +340,10 @@ export default function MenuPage() {
                             />
                             <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
                               <Heading as="h4">$12.05</Heading>
-                              <Button size="xl" className="sm:px-5 font-semibold min-w-[158px] rounded-lg">
+                              <Button
+                                size="xl"
+                                className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
+                              >
                                 Order now
                               </Button>
                             </div>
@@ -246,11 +357,20 @@ export default function MenuPage() {
                           />
                           <div className="flex flex-col items-center justify-start w-full mb-1.5">
                             <div className="flex flex-col items-center justify-start w-full gap-[11px]">
-                              <Heading size="lg" as="h3" className="text-center">
+                              <Heading
+                                size="lg"
+                                as="h3"
+                                className="text-center"
+                              >
                                 Splitza Signature
                               </Heading>
-                              <Text size="xs" as="p" className="!text-gray-800_02 text-center">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget
+                              <Text
+                                size="xs"
+                                as="p"
+                                className="!text-gray-800_02 text-center"
+                              >
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Egestas consequat mi eget
                                 auctor aliquam, diam.{" "}
                               </Text>
                             </div>
@@ -264,7 +384,10 @@ export default function MenuPage() {
                             />
                             <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
                               <Heading as="h4">$12.05</Heading>
-                              <Button size="xl" className="sm:px-5 font-semibold min-w-[158px] rounded-lg">
+                              <Button
+                                size="xl"
+                                className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
+                              >
                                 Order now
                               </Button>
                             </div>
@@ -274,7 +397,11 @@ export default function MenuPage() {
                     </div>
                   </div>
                   <div className="flex flex-row justify-start items-center w-[22%] md:w-full gap-2.5">
-                    <Img src="images/img_arrow_left.svg" alt="arrowleft_one" className="h-[15px] w-[15px]" />
+                    <Img
+                      src="images/img_arrow_left.svg"
+                      alt="arrowleft_one"
+                      className="h-[15px] w-[15px]"
+                    />
                     <div className="flex flex-row justify-between w-[71%]">
                       <div className="flex flex-col items-center justify-start h-[35px] w-[35px]">
                         <Button
@@ -305,7 +432,11 @@ export default function MenuPage() {
                           </Button>
                         </div>
                       </div>
-                      <Button color="gray_200" size="xs" className="w-[35px] rounded">
+                      <Button
+                        color="gray_200"
+                        size="xs"
+                        className="w-[35px] rounded"
+                      >
                         <Img src="images/img_bx_bx_dots_horizontal_rounded.svg" />
                       </Button>
                     </div>
