@@ -1,6 +1,9 @@
 module.exports = {
   mode: "jit",
-  content: ["./src/**/**/*.{js,ts,jsx,tsx,html,mdx}", "./src/**/*.{js,ts,jsx,tsx,html,mdx}"],
+  content: [
+    "./src/**/**/*.{js,ts,jsx,tsx,html,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,html,mdx}",
+  ],
   darkMode: "class",
   theme: {
     screens: { md: { max: "1050px" }, sm: { max: "550px" } },
@@ -26,7 +29,13 @@ module.exports = {
           "50_01": "#fafaf9",
           "400_01": "#d0c7c7",
         },
-        red: { 100: "#fdd9d9", 400: "#f54748", A700_01: "#ea1010", A700: "#ff0000", "400_19": "#f5474819" },
+        red: {
+          100: "#fdd9d9",
+          400: "#f54748",
+          A700_01: "#ea1010",
+          A700: "#ff0000",
+          "400_19": "#f5474819",
+        },
         blue_gray: { "100_02": "#ddd4d4", "100_01": "#d0ccc7" },
         white: { A700: "#ffffff", A700_7f: "#ffffff7f" },
         black: { 900: "#000000" },
@@ -37,8 +46,16 @@ module.exports = {
         lime: { 900: "#9d6542" },
         blue: { 400: "#53a5e0" },
       },
-      boxShadow: { xs: "0px 4px  11px 0px #0a0a0a0f", sm: "0px 4px  11px 0px #ff38380f" },
-      fontFamily: { poppins: "Poppins", opensans: "Open Sans", inter: "Inter", tinos: "Tinos" },
+      boxShadow: {
+        xs: "0px 4px  11px 0px #0a0a0a0f",
+        sm: "0px 4px  11px 0px #ff38380f",
+      },
+      fontFamily: {
+        poppins: "Poppins",
+        opensans: "Open Sans",
+        inter: "Inter",
+        tinos: "Tinos",
+      },
       opacity: { 0.8: 0.8 },
       backgroundImage: {
         gradient: "linear-gradient(180deg, #f447482b,#f5474800)",
