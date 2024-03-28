@@ -9,21 +9,28 @@ export default function PopularMenu() {
         Our Popular Menu
       </Heading>
       <Tabs
-        className="flex flex-col items-center justify-start w-full gap-[50px]"
+        className="flex flex-col items-center  w-full gap-[50px]"
         selectedTabClassName="!text-white-A700 bg-red-400 rounded-[16px]"
         selectedTabPanelClassName="relative tab-panel--selected"
       >
-        <TabList className="flex flex-row justify-between w-full gap-[146px] p-[19px] md:gap-10">
-          <Tab className="mt-1 ml-[35px] sm:ml-5 text-white-A700 text-xl font-semibold">
-            All catagory
+        <TabList className="flex flex-row justify-between w-full gap-[146px] p-4 sm:p-[19px] sm:gap-2 md:gap-2">
+          <Tab className="text-gray-900 text-lg font-semibold ml-2 sm:ml-5 sm:text-sm p-1 ">
+            All category
           </Tab>
-          <Tab className="text-gray-900 text-xl font-normal">Dinner</Tab>
-          <Tab className="text-gray-900 text-xl font-normal">Lunch</Tab>
-          <Tab className="text-gray-900 text-xl font-normal">Dessert</Tab>
-          <Tab className="mr-[51px] md:mr-5 text-gray-900 text-xl font-normal">
+          <Tab className="text-gray-900 text-lg font-normal sm:text-base p-1">
+            Dinner
+          </Tab>
+          <Tab className="text-gray-900 text-lg font-normal sm:text-base p-1">
+            Lunch
+          </Tab>
+          <Tab className="text-gray-900 text-lg font-normal sm:text-base p-1">
+            Dessert
+          </Tab>
+          <Tab className="text-gray-900 text-lg font-normal mr-2 sm:mr-5 sm:text-base p-1">
             Drink
           </Tab>
         </TabList>
+
         <div className="flex flex-col items-center justify-start w-full gap-12">
           {[...Array(5)].map((_, index) => (
             <TabPanel
