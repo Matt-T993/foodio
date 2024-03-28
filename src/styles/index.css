@@ -3,55 +3,170 @@ body {
   padding: 0;
   font-family: Poppins;
 }
+
 * {
   box-sizing: border-box;
   line-height: normal;
   font-family: inherit;
   margin: unset;
 }
+
 a {
   display: block;
 }
+
 ul {
   margin: 0;
   margin-inline: unset;
   padding: 0;
   list-style: none;
 }
+
 .ReactModal__Overlay {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 ::-webkit-scrollbar {
   width: 4px;
   height: 4px;
   background: transparent;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #6b6b6b;
   border-radius: 10px;
 }
+
 .tab-panel--selected {
   animation-name: tabPanel;
   animation-duration: 300ms;
   animation-timing-function: linear;
 }
+
 input {
   background-color: transparent;
   width: 100%;
 }
+
 input:focus {
   outline: none;
 }
+
 @keyframes tabPanel {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
+}
+
+/* PopularDish.css */
+.popular-dish-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  background-color: #f0fdf4;
+
+}
+
+.popular-dish-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  max-width: 1240px;
+  gap: 13px;
+  padding: 14px;
+}
+
+.dish-image-container {
+  height: 646px;
+  width: 38%;
+  margin-left: 149px;
+  position: relative;
+
+}
+
+.dish-image-container-md {
+  width: 100%;
+  margin-left: 5px;
+}
+
+.dish-image {
+  width: 100%;
+  max-width: 40rem;
+  /* max-w-xl */
+  height: auto;
+  margin-left: -160px;
+  object-fit: cover;
+}
+
+.dish-image-sm {
+  margin-left: 0;
+  width: 100%;
+}
+
+.dish-details {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  width: 31%;
+  margin-top: 91px;
+  margin-right: 149px;
+  gap: 35px;
+}
+
+.dish-details-md {
+  width: 100%;
+  margin-top: 0;
+  margin-right: 5px;
+}
+
+.dish-title {
+  display: flex;
+  width: 80%;
+  color: #991b1b;
+  /* text-red-400 */
+  font-family: 'Tinos', serif;
+  /* Assuming you have this font */
+  line-height: 110%;
+}
+
+.dish-title span:first-child {
+  color: #374151;
+  /* text-gray-900 */
+  font-family: 'Open Sans', sans-serif;
+}
+
+.dish-title span:last-child {
+  color: #991b1b;
+  /* text-red-400 */
+  font-family: 'Open Sans', sans-serif;
+}
+
+.dish-description {
+  color: #1f2937;
+  /* text-gray-800 */
+}
+
+.order-button {
+  padding: 14px;
+  font-weight: 600;
+  /* font-semibold */
+  min-width: 232px;
+}
+
+.order-button-sm {
+  min-width: 100%;
 }

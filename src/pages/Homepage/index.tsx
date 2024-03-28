@@ -1,6 +1,5 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Text, Heading, Button, Img } from "../../components";
 
 import Navbar from "components/Navbar";
 import Header from "components/Header";
