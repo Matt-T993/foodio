@@ -63,7 +63,7 @@ export default function Navbar() {
           color="white_A700"
           size="lg"
           shape="circle"
-          className="w-[50px] hover:bg-red-400 transition-colors duration-300"
+          className="w-[50px]"
         >
           <Img src="images/img_group_103.svg" />
         </Button>

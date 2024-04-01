@@ -13,20 +13,20 @@ export default function PopularMenu() {
         selectedTabClassName="!text-white-A700 bg-red-400 rounded-[16px]"
         selectedTabPanelClassName="relative tab-panel--selected"
       >
-        <TabList className="flex flex-row justify-between w-full gap-[146px] p-4 sm:p-[19px] sm:gap-2 md:gap-2">
-          <Tab className="text-gray-900 text-lg font-semibold ml-2 sm:ml-5 sm:text-sm p-1 ">
+        <TabList className="flex flex-row justify-between w-full ">
+          <Tab className="text-gray-900 text-lg font-semibold ml-2 sm:text-sm px-1 ">
             All category
           </Tab>
-          <Tab className="text-gray-900 text-lg font-normal sm:text-base p-1">
+          <Tab className="text-gray-900 text-lg font-normal sm:text-sm px-1">
             Dinner
           </Tab>
-          <Tab className="text-gray-900 text-lg font-normal sm:text-base p-1">
+          <Tab className="text-gray-900 text-lg font-normal sm:text-sm px-1 ">
             Lunch
           </Tab>
-          <Tab className="text-gray-900 text-lg font-normal sm:text-base p-1">
+          <Tab className="text-gray-900 text-lg font-normal sm:text-sm px-1">
             Dessert
           </Tab>
-          <Tab className="text-gray-900 text-lg font-normal mr-2 sm:mr-5 sm:text-base p-1">
+          <Tab className="text-gray-900 text-lg font-normal mr-2 sm:mr-5 sm:text-sm px-1 ">
             Drink
           </Tab>
         </TabList>
@@ -69,7 +69,7 @@ export default function PopularMenu() {
                           size={24}
                           className="flex justify-between mt-[13px] rounded-[1px]"
                         />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
+                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
                           <Heading as="h3">$12.05</Heading>
                           <Button
                             size="xl"
@@ -80,7 +80,7 @@ export default function PopularMenu() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-col items-center justify-center w-full gap-[30px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]">
+                    <div className="flex flex-col items-center justify-center w-full gap-[30px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]  ">
                       <Img
                         src="images/img_pngitem_1447549.png"
                         alt="pngitem1447549"
@@ -109,7 +109,7 @@ export default function PopularMenu() {
                           size={24}
                           className="flex justify-between mt-[13px] rounded-[1px]"
                         />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
+                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
                           <Heading as="h5">$12.05</Heading>
                           <Button
                             size="xl"
@@ -149,7 +149,7 @@ export default function PopularMenu() {
                           size={24}
                           className="flex justify-between mt-[13px] rounded-[1px]"
                         />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
+                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
                           <Heading as="h4">$12.05</Heading>
                           <Button
                             size="xl"
@@ -164,7 +164,7 @@ export default function PopularMenu() {
                       <Img
                         src="images/img_pngwing.png"
                         alt="pngwing_one"
-                        className="w-[95%] md:h-auto sm:w-full mt-1.5 object-cover"
+                        className="w-[270px] md:h-auto sm:w-full mt-1.5 object-cover"
                       />
                       <div className="flex flex-col items-center justify-start w-full mb-1.5">
                         <div className="flex flex-col items-center justify-start w-full gap-3.5">
@@ -189,7 +189,7 @@ export default function PopularMenu() {
                           size={24}
                           className="flex justify-between mt-[13px] rounded-[1px]"
                         />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
+                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
                           <Heading as="h4">$12.05</Heading>
                           <Button
                             size="xl"
@@ -229,7 +229,7 @@ export default function PopularMenu() {
                           size={24}
                           className="flex justify-between mt-[13px] rounded-[1px]"
                         />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
+                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
                           <Heading as="h4">$12.05</Heading>
                           <Button
                             size="xl"
@@ -269,7 +269,7 @@ export default function PopularMenu() {
                           size={24}
                           className="flex justify-between mt-[13px] rounded-[1px]"
                         />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
+                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
                           <Heading as="h4">$12.05</Heading>
                           <Button
                             size="xl"

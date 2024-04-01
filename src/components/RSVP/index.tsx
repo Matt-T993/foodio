@@ -12,7 +12,7 @@ export default function RSVP() {
           <Button
             size="5xl"
             shape="round"
-            className="sm:px-5 font-semibold min-w-[232px]"
+            className="sm:px-5 font-semibold min-w-[232px] hover:bg-white-A700 hover:text-red-400 transition-all duration-300 "
           >
             Order now
           </Button>
@@ -20,7 +20,7 @@ export default function RSVP() {
             color="white_A700_7f"
             size="5xl"
             shape="round"
-            className="sm:px-5 font-semibold min-w-[232px]"
+            className="sm:px-5 font-semibold min-w-[232px]  hover:bg-white-A700 hover:text-red-400 transition-all duration-300"
           >
             Reservation
           </Button>
