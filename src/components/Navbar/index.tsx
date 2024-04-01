@@ -3,7 +3,6 @@ import { Text, Button, Img } from "../../components";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  // Helper class for common styles on links
   const linkStyle =
     "!font-opensans hover:!text-red-400 transition-all duration-300";
 
@@ -36,7 +35,7 @@ export default function Navbar() {
           </Text>
           <div className="h-px w-full bg-transparent group-hover:bg-red-400 transition-all duration-300"></div>
         </Link>
-        {/* Assuming these are meant to be wrapped in a Link or a tag for actual navigation */}
+
         <div className="group">
           <Text size="s" as="p" className={`!text-gray-900_cc ${linkStyle}`}>
             Order online
