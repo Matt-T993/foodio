@@ -4,6 +4,10 @@ import NotFound from "pages/NotFound";
 import Menu from "pages/Menu";
 import Reservation from "pages/Reservation";
 import Homepage from "pages/Homepage";
+import Aboutus from "pages/Aboutus";
+import Contact from "pages/Contact";
+import Checkout from "pages/Checkout";
+import Orderonline from "pages/Orderonline";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
@@ -16,6 +20,22 @@ const ProjectRoutes = () => {
     {
       path: "reservation",
       element: <Reservation />,
+    },
+    {
+      path: "aboutus",
+      element: <Aboutus />,
+    },
+    {
+      path: "contact",
+      element: <Contact />,
+    },
+    {
+      path: "orderonline",
+      element: <Orderonline />,
+    },
+    {
+      path: "checkout",
+      element: <Checkout />,
     },
   ]);
 
