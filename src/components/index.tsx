@@ -6,4 +6,17 @@ import { RatingBar } from "./UI/RatingBar";
 import { SelectBox } from "./UI/SelectBox";
 import { TextArea } from "./UI/TextArea";
 import { Input } from "./UI/Input";
-export { Text, Heading, Img, Button, RatingBar, SelectBox, TextArea, Input };
+import { Radio } from "./UI/Radio";
+import { GoogleMap } from "./UI/GoogleMap";
+export {
+  Text,
+  Heading,
+  Img,
+  Button,
+  RatingBar,
+  GoogleMap,
+  SelectBox,
+  TextArea,
+  Input,
+  Radio,
+};
