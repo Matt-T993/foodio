@@ -60,7 +60,7 @@ export default function PopularChef() {
         <Button
           size="5xl"
           shape="round"
-          className="mt-[89px] sm:px-5 font-semibold min-w-[235px] sm:min-w-full"
+          className="mt-[89px] sm:px-5 font-semibold min-w-[235px] sm:min-w-full  hover:bg-white-A700 hover:text-red-400 transition-all duration-300"
         >
           View all
         </Button>

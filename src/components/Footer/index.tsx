@@ -1,11 +1,14 @@
 import React from "react";
 import { Text, Heading, Button, Img } from "..";
+import { Link } from "react-router-dom";
 
 interface Props {
   className?: string;
 }
 
 export default function Footer({ ...props }: Props) {
+  const linkStyle =
+    "!font-opensans hover:!text-red-400 transition-all duration-300";
   return (
     <footer
       {...props}
@@ -51,11 +54,31 @@ export default function Footer({ ...props }: Props) {
                 Page
               </Heading>
               <div className="flex flex-col items-start justify-start w-full gap-[23px]">
-                <Text as="p">Home</Text>
-                <Text as="p">Menu</Text>
-                <Text as="p">Order online</Text>
-                <Text as="p">Catering</Text>
-                <Text as="p">Reservation</Text>
+                <Link to="/" className="group">
+                  <Text as="p" className={`${linkStyle}`}>
+                    Home
+                  </Text>
+                </Link>
+                <Link to="menu" className="group">
+                  <Text as="p" className={`${linkStyle}`}>
+                    Menu
+                  </Text>
+                </Link>
+                <Link to="order-online" className="group">
+                  <Text as="p" className={`${linkStyle}`}>
+                    Order Online
+                  </Text>
+                </Link>
+                <Link to="catering" className="group">
+                  <Text as="p" className={`${linkStyle}`}>
+                    Catering
+                  </Text>
+                </Link>
+                <Link to="reservation" className="group">
+                  <Text as="p" className={`${linkStyle}`}>
+                    Reservation
+                  </Text>
+                </Link>
               </div>
             </div>
             <div className="flex flex-col items-start justify-start w-[14%] md:w-full mt-[5px] gap-[35px] md:mt-0">
@@ -63,9 +86,21 @@ export default function Footer({ ...props }: Props) {
                 Information
               </Heading>
               <div className="flex flex-col items-start justify-start gap-6">
-                <Text as="p">About us</Text>
-                <Text as="p">Testimonial</Text>
-                <Text as="p">Event</Text>
+                <Link to="about-us" className="group">
+                  <Text as="p" className={`${linkStyle}`}>
+                    About us
+                  </Text>
+                </Link>
+                <Link to="testimonial" className="group">
+                  <Text as="p" className={`${linkStyle}`}>
+                    Testimonial
+                  </Text>
+                </Link>
+                <Link to="event" className="group">
+                  <Text as="p" className={`${linkStyle}`}>
+                    Event
+                  </Text>
+                </Link>
               </div>
             </div>
             <div className="flex flex-col items-start justify-start w-[26%] md:w-full mt-[5px] gap-[31px] md:mt-0">

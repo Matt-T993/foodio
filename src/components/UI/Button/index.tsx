@@ -39,7 +39,10 @@ const sizes = {
 } as const;
 
 type ButtonProps = Omit<
-  React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
+  React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >,
   "onClick"
 > &
   Partial<{
@@ -65,7 +68,15 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
 }) => {
   return (
     <button
-      className={`${className} flex items-center justify-center text-center cursor-pointer ${(shape && shapes[shape]) || ""} ${(size && sizes[size]) || ""} ${(variant && variants[variant]?.[color as keyof (typeof variants)[typeof variant]]) || ""}`}
+      className={`${className} flex items-center justify-center text-center cursor-pointer ${
+        (shape && shapes[shape]) || ""
+      } ${(size && sizes[size]) || ""} ${
+        (variant &&
+          variants[variant]?.[
+            color as keyof (typeof variants)[typeof variant]
+          ]) ||
+        ""
+      }`}
       {...restProps}
     >
       {!!leftIcon && leftIcon}

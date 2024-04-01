@@ -9,21 +9,28 @@ export default function PopularMenu() {
         Our Popular Menu
       </Heading>
       <Tabs
-        className="flex flex-col items-center justify-start w-full gap-[50px]"
+        className="flex flex-col items-center  w-full gap-[50px]"
         selectedTabClassName="!text-white-A700 bg-red-400 rounded-[16px]"
         selectedTabPanelClassName="relative tab-panel--selected"
       >
-        <TabList className="flex flex-row justify-between w-full gap-[146px] p-[19px] md:gap-10">
-          <Tab className="mt-1 ml-[35px] sm:ml-5 text-white-A700 text-xl font-semibold">
-            All catagory
+        <TabList className="flex flex-row justify-between w-full ">
+          <Tab className="text-gray-900 text-lg font-semibold ml-2 sm:text-sm px-1 ">
+            All category
           </Tab>
-          <Tab className="text-gray-900 text-xl font-normal">Dinner</Tab>
-          <Tab className="text-gray-900 text-xl font-normal">Lunch</Tab>
-          <Tab className="text-gray-900 text-xl font-normal">Dessert</Tab>
-          <Tab className="mr-[51px] md:mr-5 text-gray-900 text-xl font-normal">
+          <Tab className="text-gray-900 text-lg font-normal sm:text-sm px-1">
+            Dinner
+          </Tab>
+          <Tab className="text-gray-900 text-lg font-normal sm:text-sm px-1 ">
+            Lunch
+          </Tab>
+          <Tab className="text-gray-900 text-lg font-normal sm:text-sm px-1">
+            Dessert
+          </Tab>
+          <Tab className="text-gray-900 text-lg font-normal mr-2 sm:mr-5 sm:text-sm px-1 ">
             Drink
           </Tab>
         </TabList>
+
         <div className="flex flex-col items-center justify-start w-full gap-12">
           {[...Array(5)].map((_, index) => (
             <TabPanel
@@ -62,7 +69,7 @@ export default function PopularMenu() {
                           size={24}
                           className="flex justify-between mt-[13px] rounded-[1px]"
                         />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
+                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
                           <Heading as="h3">$12.05</Heading>
                           <Button
                             size="xl"
@@ -73,7 +80,7 @@ export default function PopularMenu() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-col items-center justify-center w-full gap-[30px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]">
+                    <div className="flex flex-col items-center justify-center w-full gap-[30px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]  ">
                       <Img
                         src="images/img_pngitem_1447549.png"
                         alt="pngitem1447549"
@@ -102,7 +109,7 @@ export default function PopularMenu() {
                           size={24}
                           className="flex justify-between mt-[13px] rounded-[1px]"
                         />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
+                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
                           <Heading as="h5">$12.05</Heading>
                           <Button
                             size="xl"
@@ -142,7 +149,7 @@ export default function PopularMenu() {
                           size={24}
                           className="flex justify-between mt-[13px] rounded-[1px]"
                         />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
+                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
                           <Heading as="h4">$12.05</Heading>
                           <Button
                             size="xl"
@@ -157,7 +164,7 @@ export default function PopularMenu() {
                       <Img
                         src="images/img_pngwing.png"
                         alt="pngwing_one"
-                        className="w-[95%] md:h-auto sm:w-full mt-1.5 object-cover"
+                        className="w-[270px] md:h-auto sm:w-full mt-1.5 object-cover"
                       />
                       <div className="flex flex-col items-center justify-start w-full mb-1.5">
                         <div className="flex flex-col items-center justify-start w-full gap-3.5">
@@ -182,7 +189,7 @@ export default function PopularMenu() {
                           size={24}
                           className="flex justify-between mt-[13px] rounded-[1px]"
                         />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
+                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
                           <Heading as="h4">$12.05</Heading>
                           <Button
                             size="xl"
@@ -222,7 +229,7 @@ export default function PopularMenu() {
                           size={24}
                           className="flex justify-between mt-[13px] rounded-[1px]"
                         />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
+                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
                           <Heading as="h4">$12.05</Heading>
                           <Button
                             size="xl"
@@ -262,7 +269,7 @@ export default function PopularMenu() {
                           size={24}
                           className="flex justify-between mt-[13px] rounded-[1px]"
                         />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px]">
+                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
                           <Heading as="h4">$12.05</Heading>
                           <Button
                             size="xl"
