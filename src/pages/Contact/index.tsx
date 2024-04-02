@@ -44,7 +44,10 @@ export default function ContactPage() {
               </Text>
             </div>
             <div className="flex flex-row md:flex-col justify-start w-full gap-10 md:gap-5">
-              <GoogleMap showMarker={false} className="h-[550px] w-[48%]" />
+              <GoogleMap
+                showMarker={false}
+                className="h-[550px] w-[50%] md:w-full "
+              />
               <div className="flex flex-col items-center justify-start w-[49%] md:w-full gap-9">
                 <div className="flex flex-col items-center justify-start w-full gap-6">
                   <Input
