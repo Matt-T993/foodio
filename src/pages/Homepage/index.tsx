@@ -27,8 +27,11 @@ export default function HomepagePage() {
             <Header />
           </div>
         </div>
+
         <PopularDish />
-        <PopularMenu />
+        <div className="flex flex-col items-center justify-start w-full gap-[70px] md:px-5 max-w-[1112px]">
+          <PopularMenu />
+        </div>
         <PopularChef />
         <Testimonial />
         <RSVP />

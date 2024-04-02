@@ -4,7 +4,7 @@ import { TabPanel, TabList, Tab, Tabs } from "react-tabs";
 
 export default function PopularMenu() {
   return (
-    <div className="flex flex-col items-center justify-start w-full gap-[70px] md:px-5 max-w-[1112px]">
+    <>
       <Heading size="3xl" as="h2" className="!font-opensans text-center">
         Our Popular Menu
       </Heading>
@@ -333,6 +333,6 @@ export default function PopularMenu() {
           </div>
         </div>
       </Tabs>
-    </div>
+    </>
   );
 }
