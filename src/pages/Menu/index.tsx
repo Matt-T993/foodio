@@ -10,7 +10,7 @@ export default function MenuPage() {
   return (
     <>
       <Helmet>
-        <title>foodie</title>
+        <title>foodie - Menu</title>
         <meta
           name="description"
           content="Web site created using create-react-app"
