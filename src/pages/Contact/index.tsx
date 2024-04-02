@@ -10,6 +10,7 @@ import {
   Img,
 } from "../../components";
 import Footer from "../../components/Footer";
+import MainNavbar from "components/MainNavbar";
 
 export default function ContactPage() {
   return (
@@ -23,49 +24,7 @@ export default function ContactPage() {
       </Helmet>
       <div className="flex flex-col items-center justify-start w-full pt-[51px] gap-[120px] md:pt-5 bg-gray-50">
         <div className="flex flex-col items-center justify-start w-full gap-[102px] md:px-5 max-w-[1112px]">
-          <header className="flex flex-row md:flex-col justify-between items-center w-full md:gap-10">
-            <Img
-              src="images/img_logo.svg"
-              alt="logo_one"
-              className="h-[51px]"
-            />
-            <div className="flex flex-row sm:flex-col justify-between items-start w-[52%] md:w-full sm:gap-10">
-              <div className="flex flex-row justify-center">
-                <Text as="p">Home</Text>
-              </div>
-              <Text as="p" className="mt-px sm:mt-0">
-                Menu
-              </Text>
-              <Text as="p">About us</Text>
-              <Text as="p">Order online</Text>
-              <Text as="p" className="mt-px sm:mt-0">
-                Reservation
-              </Text>
-              <div className="flex flex-col items-start justify-start w-[14%] sm:w-full gap-[3px]">
-                <a href="#">
-                  <Text as="p">Contact us</Text>
-                </a>
-                <div className="h-px w-[58%] bg-red-400" />
-              </div>
-            </div>
-            <div className="flex flex-row justify-start gap-[25px]">
-              <Button
-                color="white_A700"
-                size="lg"
-                shape="circle"
-                className="w-[50px]"
-              >
-                <Img src="images/img_group_103.svg" />
-              </Button>
-              <Button
-                size="md"
-                shape="round"
-                className="sm:px-5 font-semibold min-w-[112px]"
-              >
-                Log in
-              </Button>
-            </div>
-          </header>
+          <MainNavbar />
           <div className="flex flex-col items-center justify-start w-full gap-[50px]">
             <div className="flex flex-col items-center justify-start w-[88%] md:w-full gap-4">
               <Heading

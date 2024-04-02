@@ -1,30 +1,26 @@
 import React from "react";
-import { Text, Button, Img } from "../../components";
+import { Text, Img, Button } from "../../components";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function MainNavbar() {
   const linkStyle =
     "!font-opensans hover:!text-red-400 transition-all duration-300";
 
   return (
-    <header className="flex flex-row md:flex-col justify-between items-center w-[83%] md:gap-10">
+    <header className="flex flex-row md:flex-col justify-between items-center w-full md:gap-10">
       <Link to="/" className="group">
         <Img src="images/img_logo.svg" alt="logo_one" className="h-[51px]" />
       </Link>
       <div className="flex flex-row sm:flex-col justify-between items-start w-[52%] md:w-full sm:gap-10">
         <Link to="/" className="group">
-          <Text size="s" as="p" className={`!text-red-400 ${linkStyle}`}>
+          <Text size="s" as="p" className={`text-gray-900_cc ${linkStyle}`}>
             Home
           </Text>
-          <div className="h-px w-full bg-transparent bg-red-400 " />
+          <div className="h-px w-full bg-transparent group-hover:bg-red-400 transition-all duration-300"></div>
         </Link>
 
         <Link to="/menu" className="group">
-          <Text
-            size="s"
-            as="p"
-            className={`mt-px sm:mt-0  !text-gray-900_cc ${linkStyle}`}
-          >
+          <Text size="s" as="p" className={`mt-px sm:mt-0   ${linkStyle}`}>
             Menu
           </Text>
           <div className="h-px w-full bg-transparent group-hover:bg-red-400 transition-all duration-300"></div>
@@ -34,6 +30,7 @@ export default function Navbar() {
             About us
           </Text>
           <div className="h-px w-full bg-transparent group-hover:bg-red-400 transition-all duration-300"></div>
+          {/* <div className="h-px w-full bg-transparent bg-red-400 " /> */}
         </Link>
 
         <Link to="/orderonline" className="group">
@@ -68,6 +65,7 @@ export default function Navbar() {
             <Img src="images/img_group_103.svg" />
           </Button>
         </Link>
+
         <Button
           size="md"
           shape="round"

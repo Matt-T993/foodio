@@ -8,7 +8,7 @@ interface Props {
 
 export default function Footer({ ...props }: Props) {
   const linkStyle =
-    "!font-opensans hover:!text-red-400 transition-all duration-300";
+    "!text-white-A700_7f  !font-opensans hover:!text-red-400 transition-all duration-300";
   return (
     <footer
       {...props}
@@ -59,22 +59,22 @@ export default function Footer({ ...props }: Props) {
                     Home
                   </Text>
                 </Link>
-                <Link to="menu" className="group">
+                <Link to="/menu" className="group">
                   <Text as="p" className={`${linkStyle}`}>
                     Menu
                   </Text>
                 </Link>
-                <Link to="order-online" className="group">
+                <Link to="/orderonline" className="group">
                   <Text as="p" className={`${linkStyle}`}>
                     Order Online
                   </Text>
                 </Link>
-                <Link to="catering" className="group">
-                  <Text as="p" className={`${linkStyle}`}>
+                <Link to="/catering" className="group">
+                  <Text as="p" className={`${linkStyle} cursor-not-allowed`}>
                     Catering
                   </Text>
                 </Link>
-                <Link to="reservation" className="group">
+                <Link to="/reservation" className="group">
                   <Text as="p" className={`${linkStyle}`}>
                     Reservation
                   </Text>
@@ -86,7 +86,7 @@ export default function Footer({ ...props }: Props) {
                 Information
               </Heading>
               <div className="flex flex-col items-start justify-start gap-6">
-                <Link to="about-us" className="group">
+                <Link to="/aboutus" className="group">
                   <Text as="p" className={`${linkStyle}`}>
                     About us
                   </Text>
@@ -97,7 +97,7 @@ export default function Footer({ ...props }: Props) {
                   </Text>
                 </Link>
                 <Link to="event" className="group">
-                  <Text as="p" className={`${linkStyle}`}>
+                  <Text as="p" className={`${linkStyle} cursor-not-allowed`}>
                     Event
                   </Text>
                 </Link>
@@ -108,11 +108,15 @@ export default function Footer({ ...props }: Props) {
                 Get in touch
               </Heading>
               <div className="flex flex-col items-start justify-start w-full gap-[21px]">
-                <Text as="p" className="!leading-[153%]">
+                <Text as="p" className="!leading-[153%] !text-white-A700_7f">
                   2972 Westheimer Rd. Santa Ana, Illinois 85486{" "}
                 </Text>
-                <Text as="p">abc@example.com</Text>
-                <Text as="p">+123 4567 8901</Text>
+                <Text className="!text-white-A700_7f" as="p">
+                  abc@example.com
+                </Text>
+                <Text className="!text-white-A700_7f" as="p">
+                  +123 4567 8901
+                </Text>
               </div>
             </div>
           </div>

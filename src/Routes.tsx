@@ -14,27 +14,27 @@ const ProjectRoutes = () => {
     { path: "/", element: <Homepage /> },
     { path: "*", element: <NotFound /> },
     {
-      path: "menu",
+      path: "/menu",
       element: <Menu />,
     },
     {
-      path: "reservation",
+      path: "/reservation",
       element: <Reservation />,
     },
     {
-      path: "aboutus",
+      path: "/aboutus",
       element: <Aboutus />,
     },
     {
-      path: "contact",
+      path: "/contact",
       element: <Contact />,
     },
     {
-      path: "orderonline",
+      path: "/orderonline",
       element: <Orderonline />,
     },
     {
-      path: "checkout",
+      path: "/checkout",
       element: <Checkout />,
     },
   ]);
