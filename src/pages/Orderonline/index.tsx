@@ -2,48 +2,21 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { Img, Button, Text, Heading, RatingBar } from "../../components";
 import Footer from "../../components/Footer";
+import MainNavbar from "components/MainNavbar";
 
 export default function OrderonlinePage() {
   return (
     <>
       <Helmet>
         <title>foodio</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <meta
+          name="description"
+          content="Web site created using create-react-app"
+        />
       </Helmet>
       <div className="flex flex-col items-center justify-start w-full pt-[51px] gap-[139px] md:pt-5 bg-gray-50">
         <div className="flex flex-col items-center justify-start w-full gap-[103px] md:px-5 max-w-[1112px]">
-          <header className="flex flex-row md:flex-col justify-between items-center w-full md:gap-10">
-            <Img src="images/img_logo.svg" alt="logo_one" className="h-[51px]" />
-            <div className="flex flex-row sm:flex-col justify-between items-start w-[52%] md:w-full sm:gap-10">
-              <Text as="p" className="mt-px sm:mt-0">
-                Home
-              </Text>
-              <Text as="p" className="mt-px sm:mt-0">
-                Menu
-              </Text>
-              <Text as="p">About us</Text>
-              <div className="flex flex-col items-start justify-start w-[17%] sm:w-full gap-1">
-                <Text as="p" className="!text-red-400">
-                  Order online
-                </Text>
-                <div className="h-px w-[49%] bg-red-400" />
-              </div>
-              <Text as="p" className="mt-px sm:mt-0">
-                Reservation
-              </Text>
-              <a href="#" className="mt-px sm:mt-0">
-                <Text as="p">Contact us</Text>
-              </a>
-            </div>
-            <div className="flex flex-row justify-start gap-[25px]">
-              <Button color="white_A700" size="lg" shape="circle" className="w-[50px]">
-                <Img src="images/img_group_103.svg" />
-              </Button>
-              <Button size="md" shape="round" className="sm:px-5 font-semibold min-w-[112px]">
-                Log in
-              </Button>
-            </div>
-          </header>
+          <MainNavbar />
           <div className="flex flex-col items-center justify-start w-full">
             <div className="flex flex-col items-center justify-start w-full gap-[69px]">
               <Heading size="4xl" as="h1" className="!font-opensans">
@@ -52,28 +25,52 @@ export default function OrderonlinePage() {
               <div className="flex flex-col items-start justify-start w-full gap-[59px]">
                 <div className="flex flex-row md:flex-col justify-start w-full gap-7 md:gap-5">
                   <div className="flex flex-row justify-start w-[18%] md:w-full">
-                    <Button color="gray_400_01" size="5xl" shape="round" className="w-full sm:px-5">
+                    <Button
+                      color="gray_400_01"
+                      size="5xl"
+                      shape="round"
+                      className="w-full sm:px-5"
+                    >
                       All Categories
                     </Button>
                   </div>
                   <div className="flex flex-row justify-start w-[21%] md:w-full">
-                    <Button size="5xl" shape="round" className="w-full sm:px-5 font-semibold">
+                    <Button
+                      size="5xl"
+                      shape="round"
+                      className="w-full sm:px-5 font-semibold"
+                    >
                       Pasta
                     </Button>
                   </div>
                   <div className="flex flex-row md:flex-col w-[57%] md:w-full gap-7">
                     <div className="flex flex-row justify-center w-[31%] md:w-full">
-                      <Button color="gray_400_01" size="5xl" shape="round" className="w-full sm:px-5">
+                      <Button
+                        color="gray_400_01"
+                        size="5xl"
+                        shape="round"
+                        className="w-full sm:px-5"
+                      >
                         Pizza
                       </Button>
                     </div>
                     <div className="flex flex-row justify-center w-[31%] md:w-full">
-                      <Button color="gray_400_01" size="5xl" shape="round" className="w-full sm:px-5">
+                      <Button
+                        color="gray_400_01"
+                        size="5xl"
+                        shape="round"
+                        className="w-full sm:px-5"
+                      >
                         Dessert
                       </Button>
                     </div>
                     <div className="flex flex-row justify-center w-[31%] md:w-full">
-                      <Button color="gray_400_01" size="5xl" shape="round" className="w-full sm:px-5">
+                      <Button
+                        color="gray_400_01"
+                        size="5xl"
+                        shape="round"
+                        className="w-full sm:px-5"
+                      >
                         Drink
                       </Button>
                     </div>
@@ -98,7 +95,11 @@ export default function OrderonlinePage() {
                                 className="h-[173px] w-[173px] md:h-auto rounded-[50%]"
                               />
                             </div>
-                            <Heading size="s" as="h3" className="mt-[21px] text-center">
+                            <Heading
+                              size="s"
+                              as="h3"
+                              className="mt-[21px] text-center"
+                            >
                               Spaghetti
                             </Heading>
                             <RatingBar
@@ -109,8 +110,13 @@ export default function OrderonlinePage() {
                               size={15}
                               className="flex justify-between mt-1 rounded-[1px]"
                             />
-                            <Text size="xs" as="p" className="w-[94%] mt-[11px] !text-gray-800_01 text-center">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat
+                            <Text
+                              size="xs"
+                              as="p"
+                              className="w-[94%] mt-[11px] !text-gray-800_01 text-center"
+                            >
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Egestas consequat
                             </Text>
                             <Heading size="xs" as="h4" className="mt-[22px]">
                               $12.05
@@ -119,14 +125,25 @@ export default function OrderonlinePage() {
                               <div className="flex flex-row justify-between items-center w-full bg-gray-50_01 rounded-[16px]">
                                 <div className="flex flex-col items-center justify-start h-[33px] w-[33px]">
                                   <div className="flex flex-col items-end justify-center h-[33px] w-[33px] p-2.5 bg-white-A700 shadow-md rounded-[16px]">
-                                    <Img src="images/img_vector_25.svg" alt="image" className="h-px mt-[5px] mb-1" />
+                                    <Img
+                                      src="images/img_vector_25.svg"
+                                      alt="image"
+                                      className="h-px mt-[5px] mb-1"
+                                    />
                                   </div>
                                 </div>
-                                <Text as="p" className="!text-gray-900 !text-[16.62px]">
+                                <Text
+                                  as="p"
+                                  className="!text-gray-900 !text-[16.62px]"
+                                >
                                   2
                                 </Text>
                                 <div className="flex flex-col items-end justify-start h-[33px] w-[33px] p-2.5 bg-white-A700 shadow-sm rounded-[16px]">
-                                  <Img src="images/img_group_7721.svg" alt="image_one" className="h-[10px] w-[10px]" />
+                                  <Img
+                                    src="images/img_group_7721.svg"
+                                    alt="image_one"
+                                    className="h-[10px] w-[10px]"
+                                  />
                                 </div>
                               </div>
                             </div>
@@ -137,7 +154,11 @@ export default function OrderonlinePage() {
                               alt="picture_one"
                               className="w-[174px] md:h-auto object-cover"
                             />
-                            <Heading size="s" as="h5" className="mt-[21px] text-center">
+                            <Heading
+                              size="s"
+                              as="h5"
+                              className="mt-[21px] text-center"
+                            >
                               Linguine
                             </Heading>
                             <RatingBar
@@ -148,8 +169,13 @@ export default function OrderonlinePage() {
                               size={15}
                               className="flex justify-between mt-1 rounded-[1px]"
                             />
-                            <Text size="xs" as="p" className="w-[94%] mt-[11px] !text-gray-800_01 text-center">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat
+                            <Text
+                              size="xs"
+                              as="p"
+                              className="w-[94%] mt-[11px] !text-gray-800_01 text-center"
+                            >
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Egestas consequat
                             </Text>
                             <Heading size="xs" as="h6" className="mt-[22px]">
                               $12.05
@@ -165,12 +191,19 @@ export default function OrderonlinePage() {
                                     />
                                   </div>
                                 </div>
-                                <Text as="p" className="!text-gray-900 !text-[16.62px]">
+                                <Text
+                                  as="p"
+                                  className="!text-gray-900 !text-[16.62px]"
+                                >
                                   2
                                 </Text>
                                 <div className="flex flex-col items-center justify-start h-[33px] w-[33px]">
                                   <div className="flex flex-col items-end justify-start h-[33px] w-[33px] p-2.5 bg-white-A700 shadow-sm rounded-[16px]">
-                                    <Img src="images/img_group_7721.svg" alt="image" className="h-[10px] w-[10px]" />
+                                    <Img
+                                      src="images/img_group_7721.svg"
+                                      alt="image"
+                                      className="h-[10px] w-[10px]"
+                                    />
                                   </div>
                                 </div>
                               </div>
@@ -182,7 +215,11 @@ export default function OrderonlinePage() {
                               alt="picture_one"
                               className="w-[174px] md:h-auto object-cover"
                             />
-                            <Heading size="s" as="h5" className="mt-[21px] text-center">
+                            <Heading
+                              size="s"
+                              as="h5"
+                              className="mt-[21px] text-center"
+                            >
                               Capellini
                             </Heading>
                             <RatingBar
@@ -193,8 +230,13 @@ export default function OrderonlinePage() {
                               size={15}
                               className="flex justify-between mt-1 rounded-[1px]"
                             />
-                            <Text size="xs" as="p" className="w-[94%] mt-[11px] !text-gray-800_01 text-center">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat
+                            <Text
+                              size="xs"
+                              as="p"
+                              className="w-[94%] mt-[11px] !text-gray-800_01 text-center"
+                            >
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Egestas consequat
                             </Text>
                             <Heading size="xs" as="h6" className="mt-[22px]">
                               $12.05
@@ -210,10 +252,18 @@ export default function OrderonlinePage() {
                                     />
                                   </div>
                                 </div>
-                                <Text as="p" className="!text-gray-900 !text-[16.62px]">
+                                <Text
+                                  as="p"
+                                  className="!text-gray-900 !text-[16.62px]"
+                                >
                                   2
                                 </Text>
-                                <Button color="white_A700" size="xs" shape="round" className="w-[33px] shadow-sm">
+                                <Button
+                                  color="white_A700"
+                                  size="xs"
+                                  shape="round"
+                                  className="w-[33px] shadow-sm"
+                                >
                                   <Img src="images/img_group_7721.svg" />
                                 </Button>
                               </div>
@@ -225,7 +275,11 @@ export default function OrderonlinePage() {
                               alt="picture_one"
                               className="w-[174px] md:h-auto object-cover"
                             />
-                            <Heading size="s" as="h5" className="mt-[18px] text-center">
+                            <Heading
+                              size="s"
+                              as="h5"
+                              className="mt-[18px] text-center"
+                            >
                               Fettuccine
                             </Heading>
                             <RatingBar
@@ -236,8 +290,13 @@ export default function OrderonlinePage() {
                               size={15}
                               className="flex justify-between mt-[7px] rounded-[1px]"
                             />
-                            <Text size="xs" as="p" className="w-[94%] mt-[11px] !text-gray-800_01 text-center">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat
+                            <Text
+                              size="xs"
+                              as="p"
+                              className="w-[94%] mt-[11px] !text-gray-800_01 text-center"
+                            >
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Egestas consequat
                             </Text>
                             <Heading size="xs" as="h6" className="mt-[22px]">
                               $12.05
@@ -253,11 +312,18 @@ export default function OrderonlinePage() {
                                     />
                                   </div>
                                 </div>
-                                <Text as="p" className="!text-gray-900 !text-[16.62px]">
+                                <Text
+                                  as="p"
+                                  className="!text-gray-900 !text-[16.62px]"
+                                >
                                   0
                                 </Text>
                                 <div className="flex flex-col items-end justify-start h-[33px] w-[33px] p-2.5 bg-white-A700 shadow-sm rounded-[16px]">
-                                  <Img src="images/img_group_7721.svg" alt="image" className="h-[10px] w-[10px]" />
+                                  <Img
+                                    src="images/img_group_7721.svg"
+                                    alt="image"
+                                    className="h-[10px] w-[10px]"
+                                  />
                                 </div>
                               </div>
                             </div>
@@ -268,7 +334,11 @@ export default function OrderonlinePage() {
                               alt="picture_one"
                               className="w-[174px] md:h-auto object-cover"
                             />
-                            <Heading size="s" as="h5" className="mt-[21px] text-center">
+                            <Heading
+                              size="s"
+                              as="h5"
+                              className="mt-[21px] text-center"
+                            >
                               Linguine
                             </Heading>
                             <RatingBar
@@ -279,8 +349,13 @@ export default function OrderonlinePage() {
                               size={15}
                               className="flex justify-between mt-1 rounded-[1px]"
                             />
-                            <Text size="xs" as="p" className="w-[94%] mt-[11px] !text-gray-800_01 text-center">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat
+                            <Text
+                              size="xs"
+                              as="p"
+                              className="w-[94%] mt-[11px] !text-gray-800_01 text-center"
+                            >
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Egestas consequat
                             </Text>
                             <Heading size="xs" as="h6" className="mt-[22px]">
                               $12.05
@@ -296,12 +371,19 @@ export default function OrderonlinePage() {
                                     />
                                   </div>
                                 </div>
-                                <Text as="p" className="!text-gray-900 !text-[16.62px]">
+                                <Text
+                                  as="p"
+                                  className="!text-gray-900 !text-[16.62px]"
+                                >
                                   0
                                 </Text>
                                 <div className="flex flex-col items-center justify-start h-[33px] w-[33px]">
                                   <div className="flex flex-col items-end justify-start h-[33px] w-[33px] p-2.5 bg-white-A700 shadow-sm rounded-[16px]">
-                                    <Img src="images/img_group_7721.svg" alt="image" className="h-[10px] w-[10px]" />
+                                    <Img
+                                      src="images/img_group_7721.svg"
+                                      alt="image"
+                                      className="h-[10px] w-[10px]"
+                                    />
                                   </div>
                                 </div>
                               </div>
@@ -313,7 +395,11 @@ export default function OrderonlinePage() {
                               alt="picture_one"
                               className="w-[174px] md:h-auto object-cover"
                             />
-                            <Heading size="s" as="h5" className="mt-[21px] text-center">
+                            <Heading
+                              size="s"
+                              as="h5"
+                              className="mt-[21px] text-center"
+                            >
                               Capellini
                             </Heading>
                             <RatingBar
@@ -324,8 +410,13 @@ export default function OrderonlinePage() {
                               size={15}
                               className="flex justify-between mt-1 rounded-[1px]"
                             />
-                            <Text size="xs" as="p" className="w-[94%] mt-[11px] !text-gray-800_01 text-center">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat
+                            <Text
+                              size="xs"
+                              as="p"
+                              className="w-[94%] mt-[11px] !text-gray-800_01 text-center"
+                            >
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Egestas consequat
                             </Text>
                             <Heading size="xs" as="h6" className="mt-[22px]">
                               $12.05
@@ -341,12 +432,19 @@ export default function OrderonlinePage() {
                                     />
                                   </div>
                                 </div>
-                                <Text as="p" className="!text-gray-900 !text-[16.62px]">
+                                <Text
+                                  as="p"
+                                  className="!text-gray-900 !text-[16.62px]"
+                                >
                                   0
                                 </Text>
                                 <div className="flex flex-col items-center justify-start h-[33px] w-[33px]">
                                   <div className="flex flex-col items-end justify-start h-[33px] w-[33px] p-2.5 bg-white-A700 shadow-sm rounded-[16px]">
-                                    <Img src="images/img_group_7721.svg" alt="image" className="h-[10px] w-[10px]" />
+                                    <Img
+                                      src="images/img_group_7721.svg"
+                                      alt="image"
+                                      className="h-[10px] w-[10px]"
+                                    />
                                   </div>
                                 </div>
                               </div>
@@ -358,7 +456,11 @@ export default function OrderonlinePage() {
                               alt="picture_one"
                               className="w-[174px] md:h-auto object-cover"
                             />
-                            <Heading size="s" as="h5" className="mt-[18px] text-center">
+                            <Heading
+                              size="s"
+                              as="h5"
+                              className="mt-[18px] text-center"
+                            >
                               Fusilli
                             </Heading>
                             <RatingBar
@@ -369,8 +471,13 @@ export default function OrderonlinePage() {
                               size={15}
                               className="flex justify-between mt-[7px] rounded-[1px]"
                             />
-                            <Text size="xs" as="p" className="w-[94%] mt-[11px] !text-gray-800_01 text-center">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat
+                            <Text
+                              size="xs"
+                              as="p"
+                              className="w-[94%] mt-[11px] !text-gray-800_01 text-center"
+                            >
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Egestas consequat
                             </Text>
                             <Heading size="xs" as="h6" className="mt-[22px]">
                               $12.05
@@ -386,11 +493,18 @@ export default function OrderonlinePage() {
                                     />
                                   </div>
                                 </div>
-                                <Text as="p" className="!text-gray-900 !text-[16.62px]">
+                                <Text
+                                  as="p"
+                                  className="!text-gray-900 !text-[16.62px]"
+                                >
                                   0
                                 </Text>
                                 <div className="flex flex-col items-end justify-start h-[33px] w-[33px] p-2.5 bg-white-A700 shadow-sm rounded-[16px]">
-                                  <Img src="images/img_group_7721.svg" alt="image" className="h-[10px] w-[10px]" />
+                                  <Img
+                                    src="images/img_group_7721.svg"
+                                    alt="image"
+                                    className="h-[10px] w-[10px]"
+                                  />
                                 </div>
                               </div>
                             </div>
@@ -401,7 +515,11 @@ export default function OrderonlinePage() {
                               alt="picture_one"
                               className="w-[174px] md:h-auto object-cover"
                             />
-                            <Heading size="s" as="h5" className="mt-[18px] text-center">
+                            <Heading
+                              size="s"
+                              as="h5"
+                              className="mt-[18px] text-center"
+                            >
                               Farfalle
                             </Heading>
                             <RatingBar
@@ -412,8 +530,13 @@ export default function OrderonlinePage() {
                               size={15}
                               className="flex justify-between mt-[7px] rounded-[1px]"
                             />
-                            <Text size="xs" as="p" className="w-[94%] mt-[11px] !text-gray-800_01 text-center">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat
+                            <Text
+                              size="xs"
+                              as="p"
+                              className="w-[94%] mt-[11px] !text-gray-800_01 text-center"
+                            >
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Egestas consequat
                             </Text>
                             <Heading size="xs" as="h6" className="mt-[22px]">
                               $12.05
@@ -427,10 +550,18 @@ export default function OrderonlinePage() {
                                     className="h-px mt-[5px] mb-1"
                                   />
                                 </div>
-                                <Text as="p" className="!text-gray-900 !text-[16.62px]">
+                                <Text
+                                  as="p"
+                                  className="!text-gray-900 !text-[16.62px]"
+                                >
                                   0
                                 </Text>
-                                <Button color="white_A700" size="xs" shape="round" className="w-[33px] shadow-sm">
+                                <Button
+                                  color="white_A700"
+                                  size="xs"
+                                  shape="round"
+                                  className="w-[33px] shadow-sm"
+                                >
                                   <Img src="images/img_group_7721.svg" />
                                 </Button>
                               </div>
@@ -442,7 +573,11 @@ export default function OrderonlinePage() {
                               alt="picture_one"
                               className="w-[174px] md:h-auto object-cover"
                             />
-                            <Heading size="s" as="h5" className="mt-[19px] text-center">
+                            <Heading
+                              size="s"
+                              as="h5"
+                              className="mt-[19px] text-center"
+                            >
                               Penne Alla Vodak
                             </Heading>
                             <RatingBar
@@ -453,8 +588,13 @@ export default function OrderonlinePage() {
                               size={15}
                               className="flex justify-between mt-1.5 rounded-[1px]"
                             />
-                            <Text size="xs" as="p" className="w-[94%] mt-[11px] !text-gray-800_01 text-center">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat
+                            <Text
+                              size="xs"
+                              as="p"
+                              className="w-[94%] mt-[11px] !text-gray-800_01 text-center"
+                            >
+                              Lorem ipsum dolor sit amet, consectetur adipiscing
+                              elit. Egestas consequat
                             </Text>
                             <Heading size="xs" as="h6" className="mt-[22px]">
                               $12.05
@@ -468,12 +608,19 @@ export default function OrderonlinePage() {
                                     className="h-px mt-[5px] mb-1"
                                   />
                                 </div>
-                                <Text as="p" className="!text-gray-900 !text-[16.62px]">
+                                <Text
+                                  as="p"
+                                  className="!text-gray-900 !text-[16.62px]"
+                                >
                                   0
                                 </Text>
                                 <div className="flex flex-col items-center justify-start h-[33px] w-[33px]">
                                   <div className="flex flex-col items-end justify-start h-[33px] w-[33px] p-2.5 bg-white-A700 shadow-sm rounded-[16px]">
-                                    <Img src="images/img_group_7721.svg" alt="image" className="h-[10px] w-[10px]" />
+                                    <Img
+                                      src="images/img_group_7721.svg"
+                                      alt="image"
+                                      className="h-[10px] w-[10px]"
+                                    />
                                   </div>
                                 </div>
                               </div>
@@ -498,20 +645,36 @@ export default function OrderonlinePage() {
                               Spaghetti
                             </Heading>
                             <div className="flex flex-col items-center justify-start h-[24px] w-[24px] mt-1">
-                              <Img src="images/img_group_7758.svg" alt="spaghetti_two" className="h-[24px] w-[24px]" />
+                              <Img
+                                src="images/img_group_7758.svg"
+                                alt="spaghetti_two"
+                                className="h-[24px] w-[24px]"
+                              />
                             </div>
                           </div>
                           <div className="flex flex-row justify-between items-center w-full">
                             <div className="flex flex-row justify-center w-[42%]">
                               <div className="flex flex-row justify-between items-center w-full bg-gray-50_01 rounded-[16px]">
-                                <Button color="white_A700" size="xs" shape="round" className="w-[33px] shadow-md">
+                                <Button
+                                  color="white_A700"
+                                  size="xs"
+                                  shape="round"
+                                  className="w-[33px] shadow-md"
+                                >
                                   <Img src="images/img_vector_25.svg" />
                                 </Button>
-                                <Text as="p" className="!text-gray-900 !text-[16.62px]">
+                                <Text
+                                  as="p"
+                                  className="!text-gray-900 !text-[16.62px]"
+                                >
                                   2
                                 </Text>
                                 <div className="flex flex-col items-end justify-start h-[33px] w-[33px] p-2.5 bg-white-A700 shadow-sm rounded-[16px]">
-                                  <Img src="images/img_group_7721.svg" alt="image" className="h-[10px] w-[10px]" />
+                                  <Img
+                                    src="images/img_group_7721.svg"
+                                    alt="image"
+                                    className="h-[10px] w-[10px]"
+                                  />
                                 </div>
                               </div>
                             </div>
@@ -526,7 +689,11 @@ export default function OrderonlinePage() {
                               Linguine
                             </Heading>
                             <div className="flex flex-col items-center justify-start h-[24px] w-[24px] mt-1">
-                              <Img src="images/img_group_7758.svg" alt="image" className="h-[24px] w-[24px]" />
+                              <Img
+                                src="images/img_group_7758.svg"
+                                alt="image"
+                                className="h-[24px] w-[24px]"
+                              />
                             </div>
                           </div>
                           <div className="flex flex-row justify-between items-center w-full">
@@ -539,7 +706,10 @@ export default function OrderonlinePage() {
                                     className="h-px mt-[5px] mb-1"
                                   />
                                 </div>
-                                <Text as="p" className="!text-gray-900 !text-[16.62px]">
+                                <Text
+                                  as="p"
+                                  className="!text-gray-900 !text-[16.62px]"
+                                >
                                   2
                                 </Text>
                                 <div className="flex flex-col items-center justify-start h-[33px] w-[33px]">
@@ -564,7 +734,11 @@ export default function OrderonlinePage() {
                               Capellini
                             </Heading>
                             <div className="flex flex-col items-center justify-start h-[24px] w-[24px] mt-1">
-                              <Img src="images/img_group_7758.svg" alt="image" className="h-[24px] w-[24px]" />
+                              <Img
+                                src="images/img_group_7758.svg"
+                                alt="image"
+                                className="h-[24px] w-[24px]"
+                              />
                             </div>
                           </div>
                           <div className="flex flex-row justify-between items-center w-full">
@@ -577,11 +751,18 @@ export default function OrderonlinePage() {
                                     className="h-px mt-[5px] mb-1"
                                   />
                                 </div>
-                                <Text as="p" className="!text-gray-900 !text-[16.62px]">
+                                <Text
+                                  as="p"
+                                  className="!text-gray-900 !text-[16.62px]"
+                                >
                                   2
                                 </Text>
                                 <div className="flex flex-col items-end justify-start h-[33px] w-[33px] p-2.5 bg-white-A700 shadow-sm rounded-[16px]">
-                                  <Img src="images/img_group_7721.svg" alt="image_one" className="h-[10px] w-[10px]" />
+                                  <Img
+                                    src="images/img_group_7721.svg"
+                                    alt="image_one"
+                                    className="h-[10px] w-[10px]"
+                                  />
                                 </div>
                               </div>
                             </div>
@@ -612,7 +793,11 @@ export default function OrderonlinePage() {
                                 >
                                   FREETOEAT
                                 </Button>
-                                <Button color="blue_400" shape="round" className="w-[60px] !rounded-[15px]">
+                                <Button
+                                  color="blue_400"
+                                  shape="round"
+                                  className="w-[60px] !rounded-[15px]"
+                                >
                                   <Img src="images/img_group_170.svg" />
                                 </Button>
                               </div>
@@ -665,7 +850,11 @@ export default function OrderonlinePage() {
                   </div>
                 </div>
                 <div className="flex flex-row sm:flex-col justify-start items-center w-[22%] md:w-full ml-[242px] gap-2.5 md:ml-5 sm:gap-5">
-                  <Img src="images/img_arrow_left.svg" alt="arrowleft_one" className="h-[15px] w-[15px]" />
+                  <Img
+                    src="images/img_arrow_left.svg"
+                    alt="arrowleft_one"
+                    className="h-[15px] w-[15px]"
+                  />
                   <div className="flex flex-row justify-between w-[71%] sm:w-full">
                     <div className="flex flex-col items-center justify-start h-[35px] w-[35px]">
                       <Button
@@ -696,11 +885,19 @@ export default function OrderonlinePage() {
                         </Button>
                       </div>
                     </div>
-                    <Button color="gray_200" size="xs" className="w-[35px] rounded">
+                    <Button
+                      color="gray_200"
+                      size="xs"
+                      className="w-[35px] rounded"
+                    >
                       <Img src="images/img_bx_bx_dots_horizontal_rounded.svg" />
                     </Button>
                   </div>
-                  <Img src="images/img_akar_icons_chevron_left.svg" alt="akaricons_one" className="h-[15px] w-[15px]" />
+                  <Img
+                    src="images/img_akar_icons_chevron_left.svg"
+                    alt="akaricons_one"
+                    className="h-[15px] w-[15px]"
+                  />
                 </div>
               </div>
             </div>

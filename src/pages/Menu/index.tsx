@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { Img, Button, Heading, RatingBar, Text } from "../../components";
 import Footer from "../../components/Footer";
 import { TabPanel, TabList, Tab, Tabs } from "react-tabs";
+import MainNavbar from "components/MainNavbar";
 
 export default function MenuPage() {
   return (
@@ -16,75 +17,7 @@ export default function MenuPage() {
       </Helmet>
       <div className="flex flex-col items-center justify-start w-full pt-[51px] gap-[139px] md:pt-5 bg-gray-50">
         <div className="flex flex-col items-center justify-start w-full gap-[92px] md:px-5 max-w-[1112px]">
-          <header className="flex flex-row md:flex-col justify-between items-center w-full md:gap-10">
-            <Img
-              src="images/img_logo.svg"
-              alt="logo_one"
-              className="h-[51px]"
-            />
-            <div className="flex flex-row sm:flex-col justify-between items-start w-[52%] md:w-full sm:gap-10">
-              <Text
-                size="s"
-                as="p"
-                className="mt-px sm:mt-0 !text-gray-900_a2 !font-opensans opacity-0.8"
-              >
-                Home
-              </Text>
-              <div className="flex flex-col items-start justify-start w-[9%] sm:w-full gap-[3px]">
-                <Text size="s" as="p" className="!text-red-400 !font-opensans">
-                  Menu
-                </Text>
-                <div className="h-px w-full bg-red-400" />
-              </div>
-              <Text
-                size="s"
-                as="p"
-                className="!text-gray-900_cc !font-opensans"
-              >
-                About us
-              </Text>
-              <Text
-                size="s"
-                as="p"
-                className="!text-gray-900_cc !font-opensans"
-              >
-                Order online
-              </Text>
-              <Text
-                size="s"
-                as="p"
-                className="mt-px sm:mt-0 !text-gray-900_cc !font-opensans"
-              >
-                Reservation
-              </Text>
-              <a href="#" className="mt-px sm:mt-0">
-                <Text
-                  size="s"
-                  as="p"
-                  className="!text-gray-900_cc !font-opensans"
-                >
-                  Contact us
-                </Text>
-              </a>
-            </div>
-            <div className="flex flex-row justify-start gap-[25px]">
-              <Button
-                color="white_A700"
-                size="lg"
-                shape="circle"
-                className="w-[50px]"
-              >
-                <Img src="images/img_group_103.svg" />
-              </Button>
-              <Button
-                size="md"
-                shape="round"
-                className="sm:px-5 font-semibold min-w-[112px]"
-              >
-                Log in
-              </Button>
-            </div>
-          </header>
+          <MainNavbar />
           <div className="flex flex-col items-center justify-start w-full">
             <div className="flex flex-col items-center justify-start w-full gap-[70px]">
               <Heading
