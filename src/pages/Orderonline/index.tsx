@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Img, Button, Text, Heading, RatingBar } from "../../components";
 import Footer from "../../components/Footer";
@@ -6,8 +6,18 @@ import MainNavbar from "components/MainNavbar";
 import OnlineMenu from "components/OnlineMenu";
 import OrderList from "components/OrderList";
 import FoodCategories from "components/FoodCategories";
+import Navbar from "components/Navbar";
+import Login from "modals/Login";
 
 export default function OrderonlinePage() {
+  // State to manage modal visibility
+  const [isLoginModalOpen, setLoginModalOpen] = useState<boolean>(false);
+
+  // Handler to open the modal
+  const openLoginModal = () => setLoginModalOpen(true);
+
+  // Handler to close the modal
+  const closeLoginModal = () => setLoginModalOpen(false);
   return (
     <>
       <Helmet>
@@ -19,7 +29,8 @@ export default function OrderonlinePage() {
       </Helmet>
       <div className="flex flex-col items-center justify-start w-full pt-[51px] gap-[139px] md:pt-5 bg-gray-50">
         <div className="flex flex-col items-center justify-start w-full gap-[103px] md:px-5 max-w-[1112px]">
-          <MainNavbar />
+          <Navbar openLoginModal={openLoginModal} />
+
           <div className="flex flex-col items-center justify-start w-full">
             <div className="flex flex-col items-center justify-start w-full gap-[69px]">
               <Heading size="4xl" as="h1" className="!font-opensans">
@@ -88,6 +99,7 @@ export default function OrderonlinePage() {
         </div>
         <Footer className="flex justify-center items-center w-full" />
       </div>
+      <Login isOpen={isLoginModalOpen} closeLoginModal={closeLoginModal} />
     </>
   );
 }

@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Heading, Text, Img, Button } from "../../components";
 
 import MainNavbar from "components/MainNavbar";
 import Footer from "components/Footer";
+import Login from "modals/Login";
 
 export default function AboutusPage() {
+  // State to manage modal visibility
+  const [isLoginModalOpen, setLoginModalOpen] = useState<boolean>(false);
+
+  // Handler to open the modal
+  const openLoginModal = () => setLoginModalOpen(true);
+
+  // Handler to close the modal
+  const closeLoginModal = () => setLoginModalOpen(false);
   return (
     <>
       <Helmet>
@@ -17,7 +26,7 @@ export default function AboutusPage() {
       </Helmet>
       <div className="flex flex-col items-center justify-start w-full pt-[51px] gap-[105px] md:mt-5 bg-gray-50">
         <div className="flex flex-col items-center justify-start w-full gap-[78px] md:px-5 max-w-[1112px]">
-          <MainNavbar />
+          <MainNavbar openLoginModal={openLoginModal} />
           <div className="flex flex-row justify-between items-center md:flex-col-reverse">
             <div className="w-[50%] flex flex-col md:w-full md:items-center md:pt-8">
               <div className="flex flex-col items-center justify-start w-[537px] md:w-[437px]  sm:w-full sm:h-auto p-[52px]  bg-blue_gray-100_01 rounded-[271px]">
@@ -141,6 +150,7 @@ export default function AboutusPage() {
         </div>
         <Footer className="flex justify-center items-center w-full" />
       </div>
+      <Login isOpen={isLoginModalOpen} closeLoginModal={closeLoginModal} />
     </>
   );
 }

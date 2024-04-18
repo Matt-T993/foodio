@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import {
   Button,
@@ -11,8 +11,17 @@ import {
 } from "../../components";
 import Footer from "../../components/Footer";
 import MainNavbar from "components/MainNavbar";
+import Login from "modals/Login";
 
 export default function CheckoutPage() {
+  // State to manage modal visibility
+  const [isLoginModalOpen, setLoginModalOpen] = useState<boolean>(false);
+
+  // Handler to open the modal
+  const openLoginModal = () => setLoginModalOpen(true);
+
+  // Handler to close the modal
+  const closeLoginModal = () => setLoginModalOpen(false);
   return (
     <>
       <Helmet>
@@ -24,7 +33,8 @@ export default function CheckoutPage() {
       </Helmet>
       <div className="flex flex-col items-center justify-start w-full pt-[51px] gap-[120px] md:pt-5 bg-gray-50">
         <div className="flex flex-col items-start justify-start w-full gap-[100px] md:px-5 max-w-[1112px]">
-          <MainNavbar />
+          <MainNavbar openLoginModal={openLoginModal} />
+
           <div className="flex flex-row md:flex-col justify-between items-start w-[87%] md:w-full md:gap-10">
             <Button
               color="gray_900"
@@ -169,6 +179,7 @@ export default function CheckoutPage() {
         </div>
         <Footer className="flex justify-center items-center w-full" />
       </div>
+      <Login isOpen={isLoginModalOpen} closeLoginModal={closeLoginModal} />
     </>
   );
 }

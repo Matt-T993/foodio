@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { Img } from "../../components";
 import Footer from "../../components/Footer";
 import MainNavbar from "components/MainNavbar";
 import Booking from "components/Booking";
+import Login from "modals/Login";
 
 const dropDownOptions = [
   { label: "Option1", value: "option1" },
@@ -12,6 +13,14 @@ const dropDownOptions = [
 ];
 
 export default function ReservationPage() {
+  // State to manage modal visibility
+  const [isLoginModalOpen, setLoginModalOpen] = useState<boolean>(false);
+
+  // Handler to open the modal
+  const openLoginModal = () => setLoginModalOpen(true);
+
+  // Handler to close the modal
+  const closeLoginModal = () => setLoginModalOpen(false);
   return (
     <>
       <Helmet>
@@ -23,7 +32,8 @@ export default function ReservationPage() {
       </Helmet>
       <div className="flex flex-col items-center justify-start w-full pt-[51px] gap-[120px] md:pt-5 bg-gray-50">
         <div className="flex flex-col items-center justify-start w-full gap-[91px] md:px-5 max-w-[1112px]">
-          <MainNavbar />
+          <MainNavbar openLoginModal={openLoginModal} />
+
           <div className="flex flex-row justify-center w-full">
             <div className="flex flex-row md:flex-col justify-between items-center w-full md:gap-10">
               <Img
@@ -37,6 +47,7 @@ export default function ReservationPage() {
         </div>
         <Footer className="flex justify-center items-center w-full" />
       </div>
+      <Login isOpen={isLoginModalOpen} closeLoginModal={closeLoginModal} />
     </>
   );
 }
