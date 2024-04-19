@@ -37,7 +37,7 @@ export default function Register({
             />
             <div className="mx-auto w-[85%]">
               <Text size="s" as="p" className="mb-6">
-                Please enter you details
+                Please enter your details
               </Text>
               <form className="">
                 <div>
