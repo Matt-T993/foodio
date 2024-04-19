@@ -6,7 +6,6 @@ import MainNavbar from "components/MainNavbar";
 import OnlineMenu from "components/OnlineMenu";
 import OrderList from "components/OrderList";
 import FoodCategories from "components/FoodCategories";
-import Navbar from "components/Navbar";
 import Login from "modals/Login";
 
 export default function OrderonlinePage() {
@@ -29,7 +28,7 @@ export default function OrderonlinePage() {
       </Helmet>
       <div className="flex flex-col items-center justify-start w-full pt-[51px] gap-[139px] md:pt-5 bg-gray-50">
         <div className="flex flex-col items-center justify-start w-full gap-[103px] md:px-5 max-w-[1112px]">
-          <Navbar openLoginModal={openLoginModal} />
+          <MainNavbar openLoginModal={openLoginModal} />
 
           <div className="flex flex-col items-center justify-start w-full">
             <div className="flex flex-col items-center justify-start w-full gap-[69px]">
