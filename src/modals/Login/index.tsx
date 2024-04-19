@@ -1,195 +1,108 @@
-import React from "react";
-import {
-  Text,
-  Heading,
-  Button,
-  TextArea,
-  SelectBox,
-  Img,
-  Input,
-} from "../../components";
+import { CloseSVG } from "assets/images";
+import { Button, Img, Text } from "components";
+import Register from "modals/Register";
+import React, { useState } from "react";
 import { default as ModalProvider } from "react-modal";
 
 interface Props {
   className?: string;
   isOpen: boolean;
   closeLoginModal: () => void;
+  openLoginModal: () => void;
 }
-const dropDownOptions = [
-  { label: "Option1", value: "option1" },
-  { label: "Option2", value: "option2" },
-  { label: "Option3", value: "option3" },
-];
 
-export default function Login({ isOpen, closeLoginModal, ...props }: Props) {
+export default function Login({
+  isOpen,
+  closeLoginModal,
+  openLoginModal,
+  ...props
+}: Props) {
+  const [isResgisterModalOpen, setRegisterModalOpen] = useState<boolean>(false);
+
+  // Handler to open the modal
+  const openRegisterModal = () => {
+    setRegisterModalOpen(true);
+    closeLoginModal();
+  };
+
+  // Handler to close the modal
+  const closeRegisterModal = () => setRegisterModalOpen(false);
   return (
-    <ModalProvider
-      {...props}
-      appElement={document.getElementById("root")}
-      isOpen={isOpen}
-      className="min-w-[1112px]"
-    >
-      <div className="flex flex-row justify-center w-[50%]  mx-auto">
-        <div className="flex flex-row justify-center w-full p-10 sm:p-5 bg-white-A700 rounded-[16px]">
-          <div className="flex flex-col items-center justify-start w-[97%] mb-5 gap-3.5 mx-5">
-            <div className="flex flex-row justify-center w-full">
-              <div className="flex flex-col items-end justify-start w-full gap-[27px]">
-                <div className="flex flex-row justify-between items-start w-[61%] md:w-full">
-                  <Heading
-                    size="xl"
-                    as="h1"
-                    className="mt-[15px] !font-opensans text-center"
-                  >
-                    Reservation
-                  </Heading>
-                  <Img
-                    src="images/img_group_7736.svg"
-                    alt="image"
-                    className="h-[20px] w-[20px] cursor-pointer"
-                    onClick={closeLoginModal}
-                  />
-                </div>
-                <div className="flex flex-col items-center justify-start w-full gap-[47px]">
-                  <div className="flex flex-row justify-center w-full">
-                    <Text
-                      as="p"
-                      className="flex justify-center items-center w-full h-[64px] px-[35px] py-[17px] sm:px-5 !text-black-900 bg-light_blue-A100 rounded-[20px]"
+    <>
+      <ModalProvider
+        {...props}
+        appElement={document.getElementById("root")}
+        isOpen={isOpen}
+        className="w-full md:w-[70%] sm:w-[90%] max-w-[1112px] h-[70%] bg-white-A700 rounded border-2"
+      >
+        <div className=" px relative flex flex-row justify-between md:justify-center  md:flex-col w-full h-full ">
+          <div className="w-[50%] flex flex-col md:w-full px-6 mt-6 md:mt-0">
+            <div className="flex flex-col h-full justify-evenly">
+              <Img
+                src="images/img_logo.svg"
+                alt="logo_one"
+                className="h-[80px] md:mb-8"
+              />
+              <div className="mx-auto w-[85%]">
+                <Text size="s" as="p" className="mb-6">
+                  Please login to your account
+                </Text>
+                <form className="">
+                  <div>
+                    <input
+                      placeholder="Email"
+                      className="border-2 py-2 mb-4 pl-3"
+                    />
+
+                    <input
+                      placeholder="Password"
+                      className="border-2 py-2 mb-4 pl-3"
+                    />
+
+                    <Button
+                      size="lg"
+                      className="sm:px-5 rounded font-semibold w-full mb-4  hover:bg-white-A700 hover:text-red-400 transition-all duration-300"
                     >
-                      <span className="text-gray-800_01">
-                        Due to limited availability, we can hold this table for
-                        you for
-                      </span>
-                      <span className="text-black-900"></span>
-                      <span className="text-gray-900 font-semibold">
-                        5:00 minutes
-                      </span>
+                      Log In
+                    </Button>
+                    <Text size="s" as="p" className="text-center mb-2">
+                      Forgot Password?
                     </Text>
                   </div>
-                  <div className="flex flex-row md:flex-col justify-between items-start w-full md:gap-10">
-                    <div className="flex flex-col items-start justify-start w-[48%] md:w-full gap-[22px]">
-                      <Heading as="h2" className="!text-black-900">
-                        Data order
-                      </Heading>
-                      <Input
-                        size="sm"
-                        shape="round"
-                        type="text"
-                        name="firstName"
-                        placeholder="First name"
-                        className="w-full sm:w-full"
-                      />
-                      <Input
-                        size="sm"
-                        shape="round"
-                        type="text"
-                        name="lastName"
-                        placeholder="Last name"
-                        className="w-full sm:w-full"
-                      />
-                      <Input
-                        size="sm"
-                        shape="round"
-                        type="number"
-                        name="phoneNumber"
-                        placeholder="Phone number"
-                        prefix={
-                          <Img
-                            src="images/img_group_94dropdown.svg"
-                            alt="Group 94:Dropdown "
-                          />
-                        }
-                        className="w-full sm:w-full gap-4"
-                      />
-                      <Input
-                        size="sm"
-                        shape="round"
-                        type="email"
-                        name="email"
-                        placeholder="Email address"
-                        className="w-full sm:w-full"
-                      />
-                    </div>
-                    <div className="flex flex-col items-start justify-start w-[44%] md:w-full gap-6 p-[34px] sm:p-5 bg-blue_gray-100_01 rounded-[20px]">
-                      <div className="flex flex-col items-start justify-start w-[94%] md:w-full gap-8">
-                        <div className="flex flex-row justify-start ml-[5px] md:ml-0">
-                          <Heading as="h3">Reservation detail</Heading>
-                        </div>
-                        <div className="flex flex-row justify-between items-center w-full">
-                          <Img
-                            src="images/img_icon_calender.svg"
-                            alt="iconcalender"
-                            className="h-[34px] w-[34px]"
-                          />
-                          <Text as="p" className="!text-gray-800_01">
-                            Saturday, 28 february 2022
-                          </Text>
-                        </div>
-                        <div className="flex flex-row justify-start w-[49%] md:w-full">
-                          <div className="flex flex-row justify-between items-center w-full">
-                            <Img
-                              src="images/img_icon_time.svg"
-                              alt="icontime_one"
-                              className="h-[34px] w-[34px] mb-px"
-                            />
-                            <Text as="p" className="!text-gray-800_01">
-                              04:30 pm
-                            </Text>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-row justify-between items-center w-[95%] md:w-full">
-                        <Img
-                          src="images/img_icon_people.svg"
-                          alt="iconpeople_one"
-                          className="h-[34px] w-[34px]"
-                        />
-                        <Text as="p" className="!text-gray-800_01">
-                          2 people (Standar seating)
-                        </Text>
-                      </div>
-                    </div>
+                  <div className="flex flex-row items-center justify-evenly mt-10 ">
+                    <Text size="s" as="p" className="">
+                      Don't have an account?
+                    </Text>
+                    <Button
+                      size="sm"
+                      className="sm:px-5 font-semibold rounded hover:bg-white-A700 hover:text-red-400 transition-all duration-300"
+                      onClick={openRegisterModal}
+                    >
+                      Register
+                    </Button>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-row md:flex-col justify-between items-start w-[99%] md:w-full md:gap-10">
-              <div className="flex flex-col items-center justify-start w-[49%] md:w-full mt-[9px] gap-6 md:mt-0">
-                <SelectBox
-                  size="xs"
-                  indicator={
-                    <Img src="images/img_rectangle_21.svg" alt="Rectangle 21" />
-                  }
-                  name="selectan"
-                  placeholder="Select an occasion"
-                  options={dropDownOptions}
-                  className="w-full gap-px border-gray-400 border border-solid rounded-lg"
-                />
-                <TextArea
-                  size="sm"
-                  shape="round"
-                  name="groupseventynin"
-                  placeholder="Add a special request"
-                  className="w-full sm:pb-5 sm:pr-5 text-gray-500"
-                />
-                <Button size="2xl" className="w-full sm:px-5 rounded-lg">
-                  Confirm reservation
-                </Button>
-              </div>
-              <div className="flex flex-col items-start justify-start w-[42%] md:w-full gap-10">
-                <Heading as="h4" className="!text-black-900">
-                  Restaurant informations
-                </Heading>
-                <Text as="p" className="!text-gray-800_01">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae ab illo inventore veritatis et quasi architecto
-                  beatae vitae dicta sunt explicabo.
-                </Text>
+                </form>
               </div>
             </div>
           </div>
+          <div className="w-[50%] flex flex-col md:w-full items-center justify-center bg-red-400_19 md:hidden">
+            <Img
+              src="images/img_illustration.png"
+              alt="illustration"
+              className="w-full max-w-xl object-cover"
+            />
+          </div>
+          <CloseSVG
+            className="absolute right-3 top-3 cursor-pointer"
+            onClick={closeLoginModal}
+          />
         </div>
-      </div>
-    </ModalProvider>
+      </ModalProvider>
+      <Register
+        isOpen={isResgisterModalOpen}
+        closeRegisterModal={closeRegisterModal}
+        openLoginModal={openLoginModal}
+      />
+    </>
   );
 }

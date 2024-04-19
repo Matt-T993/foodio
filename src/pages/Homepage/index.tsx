@@ -11,6 +11,7 @@ import RSVP from "components/RSVP";
 import Footer from "components/Footer";
 import Login from "modals/Login";
 import MainNavbar from "components/MainNavbar";
+import Reservationhasbeenconfirmed from "modals/Reservationhasbeenconfirmed";
 
 export default function HomepagePage() {
   // State to manage modal visibility
@@ -47,7 +48,11 @@ export default function HomepagePage() {
         <RSVP />
         <Footer />
       </div>
-      <Login isOpen={isLoginModalOpen} closeLoginModal={closeLoginModal} />
+      <Login
+        isOpen={isLoginModalOpen}
+        closeLoginModal={closeLoginModal}
+        openLoginModal={openLoginModal}
+      />
     </>
   );
 }

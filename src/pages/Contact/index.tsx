@@ -103,7 +103,6 @@ export default function ContactPage() {
         </div>
         <Footer className="flex justify-center items-center w-full" />
       </div>
-      <Login isOpen={isLoginModalOpen} closeLoginModal={closeLoginModal} />
     </>
   );
 }
