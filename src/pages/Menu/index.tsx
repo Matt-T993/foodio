@@ -37,7 +37,11 @@ export default function MenuPage() {
         </div>
         <Footer className="flex justify-center items-center w-full" />
       </div>
-      <Login isOpen={isLoginModalOpen} closeLoginModal={closeLoginModal} />
+      <Login
+        isOpen={isLoginModalOpen}
+        closeLoginModal={closeLoginModal}
+        openLoginModal={openLoginModal}
+      />
     </>
   );
 }
