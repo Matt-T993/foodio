@@ -4,7 +4,7 @@ import App from "./App";
 import "./styles/tailwind.css";
 import "./styles/index.css";
 import "./styles/font.css";
-import { Provider } from "react-redux";
+import { Provider } from "@tyreact-redux";
 import { store } from "./store";
 
 const container = document.getElementById("root");
