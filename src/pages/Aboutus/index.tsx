@@ -15,6 +15,7 @@ export default function AboutusPage() {
 
   // Handler to close the modal
   const closeLoginModal = () => setLoginModalOpen(false);
+
   return (
     <>
       <Helmet>
