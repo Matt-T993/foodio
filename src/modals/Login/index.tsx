@@ -2,7 +2,11 @@ import { CloseSVG } from "assets/images";
 import { Button, Img, Text } from "components";
 import Register from "modals/Register";
 import React, { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { default as ModalProvider } from "react-modal";
+import { setError, setLoading, setUser } from "../../redux/authSlice";
+import { auth } from "../../firebase/init";
+import { useDispatch } from "react-redux";
 
 interface Props {
   className?: string;
@@ -17,6 +21,9 @@ export default function Login({
   openLoginModal,
   ...props
 }: Props) {
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isResgisterModalOpen, setRegisterModalOpen] = useState<boolean>(false);
 
   // Handler to open the modal
@@ -24,9 +31,35 @@ export default function Login({
     setRegisterModalOpen(true);
     closeLoginModal();
   };
+  const resetForm = () => {
+    setEmail("");
+    setPassword("");
+  };
 
   // Handler to close the modal
   const closeRegisterModal = () => setRegisterModalOpen(false);
+
+  const loginUser = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    dispatch(setLoading(true));
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      dispatch(setUser({ email: user.email }));
+      closeLoginModal();
+    } catch (error) {
+      console.error("Failed to login:", error);
+      dispatch(setError("Failed to login. Please check your credentials."));
+    } finally {
+      dispatch(setLoading(false));
+      resetForm();
+    }
+  };
+
   return (
     <>
       <ModalProvider
@@ -47,19 +80,26 @@ export default function Login({
                 <Text size="s" as="p" className="mb-6">
                   Please login to your account
                 </Text>
-                <form className="">
+                <form onSubmit={loginUser}>
                   <div>
                     <input
+                      type="email"
                       placeholder="Email"
                       className="border-2 py-2 mb-4 pl-3"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
 
                     <input
+                      type="password"
                       placeholder="Password"
                       className="border-2 py-2 mb-4 pl-3"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
 
                     <Button
+                      type="submit"
                       size="lg"
                       className="sm:px-5 rounded font-semibold w-full mb-4  hover:bg-white-A700 hover:text-red-400 transition-all duration-300"
                     >
