@@ -5,7 +5,7 @@ import "./styles/tailwind.css";
 import "./styles/index.css";
 import "./styles/font.css";
 import { Provider } from "react-redux";
-import { store } from "./store";
+import store from "./redux/store";
 
 const container = document.getElementById("root");
 const root = createRoot(container);

@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import { Text, Button, Img } from "../../components";
 import { Link } from "react-router-dom";
 import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import { useSelector } from "react-redux";
+import { RootState } from "redux/store";
+import LoginUserDropDown from "components/LoginUserDropDown";
 
 interface MainNavbarProps {
   openLoginModal: () => void;
 }
 
 export default function Navbar({ openLoginModal }: MainNavbarProps) {
+  const user = useSelector((state: RootState) => state.auth.user);
   const linkStyle =
     "!font-opensans hover:!text-red-400 transition-all duration-300";
 
@@ -94,14 +98,18 @@ export default function Navbar({ openLoginModal }: MainNavbarProps) {
               <Img src="images/img_group_103.svg" />
             </Button>
           </Link>
-          <Button
-            size="md"
-            shape="round"
-            className="sm:px-5 font-semibold min-w-[112px] hover:bg-white-A700 hover:text-red-400 transition-all duration-300"
-            onClick={openLoginModal}
-          >
-            Log in
-          </Button>
+          {user.email ? (
+            <LoginUserDropDown />
+          ) : (
+            <Button
+              size="md"
+              shape="round"
+              className="sm:px-5 font-semibold min-w-[112px] hover:bg-white-A700 hover:text-red-400 transition-all duration-300"
+              onClick={openLoginModal}
+            >
+              Log in
+            </Button>
+          )}
         </div>
       </div>
     </header>

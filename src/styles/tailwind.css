@@ -17,7 +17,7 @@ input:where(:not([type])),
 [type="week"],
 [multiple],
 textarea,
-select {
+/* select {
   appearance: none;
   background-color: transparent;
   border-color: unset;
@@ -26,7 +26,7 @@ select {
   padding: unset;
   font-size: unset;
   line-height: unset;
-}
+} */
 
 /* Override default focus colors for tailwindcss-forms https://github.com/tailwindlabs/tailwindcss-forms */
 [type="text"]:focus,
@@ -48,6 +48,7 @@ select:focus {
 li:focus-visible {
   outline: none;
 }
+
 li:hover {
   cursor: pointer;
 }
