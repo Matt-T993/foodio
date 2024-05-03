@@ -3,8 +3,9 @@ import { Text, Button, Img } from "../../components";
 import { Link } from "react-router-dom";
 import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useSelector } from "react-redux";
+
+import LoginUserDropDown from "../../components/LoginUserDropDown";
 import { RootState } from "redux/store";
-import LoginUserDropDown from "components/LoginUserDropDown";
 
 interface MainNavbarProps {
   openLoginModal: () => void;
