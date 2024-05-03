@@ -5,22 +5,25 @@ import Footer from "../../components/Footer";
 import MainNavbar from "components/MainNavbar";
 import Booking from "components/Booking";
 import Login from "modals/Login";
-
-const dropDownOptions = [
-  { label: "Option1", value: "option1" },
-  { label: "Option2", value: "option2" },
-  { label: "Option3", value: "option3" },
-];
+import EnterDetailsReservation from "modals/EnterDetailsReservation";
 
 export default function ReservationPage() {
   // State to manage modal visibility
   const [isLoginModalOpen, setLoginModalOpen] = useState<boolean>(false);
+  const [isRSVPModalOpen, setRSVPModalOpen] = useState<boolean>(false);
+
+  // Handler to open the modal
+  const openRSVPModal = () => setRSVPModalOpen(true);
+
+  // Handler to close the modal
+  const closeRSVPModal = () => setRSVPModalOpen(false);
 
   // Handler to open the modal
   const openLoginModal = () => setLoginModalOpen(true);
 
   // Handler to close the modal
   const closeLoginModal = () => setLoginModalOpen(false);
+
   return (
     <>
       <Helmet>
@@ -41,7 +44,7 @@ export default function ReservationPage() {
                 alt="image"
                 className="w-[50%] md:w-full md:h-[657px] object-cover rounded-[20px] sm:object-contain"
               />
-              <Booking />
+              <Booking openModal={openRSVPModal} />
             </div>
           </div>
         </div>
@@ -51,6 +54,10 @@ export default function ReservationPage() {
         isOpen={isLoginModalOpen}
         closeLoginModal={closeLoginModal}
         openLoginModal={openLoginModal}
+      />
+      <EnterDetailsReservation
+        isOpen={isRSVPModalOpen}
+        closeModal={closeRSVPModal}
       />
     </>
   );

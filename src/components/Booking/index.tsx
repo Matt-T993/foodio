@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, SelectBox, Heading } from "../../components";
 
-export default function Booking() {
+interface BookingProps {
+  openModal: () => void;
+}
+
+export default function Booking({ openModal }: BookingProps) {
   const dropDownOptions = [
     { label: "Option1", value: "option1" },
     { label: "Option2", value: "option2" },
@@ -38,6 +42,7 @@ export default function Booking() {
       <Button
         size="8xl"
         className="w-full sm:px-5 font-semibold rounded-[20px]"
+        onClick={openModal}
       >
         Book now
       </Button>
