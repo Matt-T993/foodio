@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Text,
   Heading,
@@ -10,6 +10,7 @@ import {
 } from "../../components";
 import { default as ModalProvider } from "react-modal";
 import { CloseSVG } from "assets/images";
+import Reservationhasbeenconfirmed from "modals/Reservationhasbeenconfirmed";
 
 const dropDownOptions = [
   { label: "Option1", value: "option1" },
@@ -27,6 +28,15 @@ export default function EnterDetailsReservation({
   closeModal,
   ...props
 }: Props) {
+  const [isconfirmRSVPModal, setConfirmRSVPModal] = useState<boolean>(false);
+
+  // Handler to open the modal
+  const openConfirmRSVPModal = () => {
+    setConfirmRSVPModal(true);
+  };
+
+  // Handler to close the modal
+  const closeConfirmRSVPModal = () => setConfirmRSVPModal(false);
   return (
     <ModalProvider
       {...props}
@@ -100,7 +110,11 @@ export default function EnterDetailsReservation({
               placeholder="Add a special request"
               className="w-full sm:pb-5 sm:pr-5 text-gray-500"
             />
-            <Button size="2xl" className="w-full sm:px-5 rounded-lg">
+            <Button
+              onClick={openConfirmRSVPModal}
+              size="2xl"
+              className="w-full sm:px-5 rounded-lg"
+            >
               Confirm reservation
             </Button>
           </div>
@@ -147,6 +161,10 @@ export default function EnterDetailsReservation({
       <CloseSVG
         className="absolute right-3 top-6 cursor-pointer"
         onClick={closeModal}
+      />
+      <Reservationhasbeenconfirmed
+        isOpen={isconfirmRSVPModal}
+        closeConfirmModal={closeConfirmRSVPModal}
       />
     </ModalProvider>
   );
