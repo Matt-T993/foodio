@@ -61,11 +61,12 @@ export default function Register({
       console.log("User registered:", userCredential.user);
       const user = userCredential.user;
       dispatch(setUser({ email: user.email }));
-      // await setDoc(doc(db, "users", user.uid), {
-      //   firstName: firstName,
-      //   lastName: lastName,
-      //   email: email,
-      // });
+      const userID: string = auth.currentUser.uid
+      await setDoc(doc(db, "users", userID), {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+      });
       closeRegisterModal();
       resetForm();
       console.log("User additional details added to Firestore");
