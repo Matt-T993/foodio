@@ -1,14 +1,17 @@
 import React from "react";
 import { Img, Text, Button, Heading } from "../../components";
 import { default as ModalProvider } from "react-modal";
+import { CloseSVG } from "assets/images";
 
 interface Props {
   className?: string;
   isOpen: boolean;
+  closeConfirmModal: () => void;
 }
 
 export default function Reservationhasbeenconfirmed({
   isOpen,
+  closeConfirmModal,
   ...props
 }: Props) {
   return (
@@ -35,6 +38,7 @@ export default function Reservationhasbeenconfirmed({
                           Reservation
                         </Heading>
                         <Img
+                          onClick={closeConfirmModal}
                           src="images/img_group_7736.svg"
                           alt="image"
                           className="h-[24px] w-[24px]"
@@ -118,12 +122,9 @@ export default function Reservationhasbeenconfirmed({
                     </div>
                   </div>
                   <Button
-                    color="red_A700"
                     size="7xl"
-                    rightIcon={
-                      <Img src="images/img_icon_cancel.svg" alt="Icon cancel" />
-                    }
-                    className="mt-[-38px] mr-8 gap-5 sm:mr-5 sm:px-5 min-w-[246px] rounded-[20px] sm:min-w-full"
+                    rightIcon={<CloseSVG className="fill-white-A700_7f" />}
+                    className=" text-white-A700_7f mt-[-38px] mr-8 gap-5 sm:mr-5 sm:px-5 min-w-[246px] rounded-[20px] sm:min-w-full"
                   >
                     Cancel
                   </Button>
@@ -135,7 +136,7 @@ export default function Reservationhasbeenconfirmed({
                     className="h-[34px] w-[34px]"
                   />
                   <Text as="p" className="!text-gray-800_01">
-                    2 people (Standar seating)
+                    2 people (Standard seating)
                   </Text>
                 </div>
               </div>
