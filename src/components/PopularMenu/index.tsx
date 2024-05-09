@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Text, Heading, Button, Img, RatingBar } from "../../components";
 import { TabPanel, TabList, Tab, Tabs } from "react-tabs";
+import Service from "service/service";
+
+const initialFoodItems = 6
+const nextRow = 6
 
 export default function PopularMenu() {
+  const[foods, setFoods] = useState([])
+  const [next, setNext] = useState(initialFoodItems)
+
+  const handleMoreFoodItems = () => {
+    setNext(next + nextRow)
+  }
+  const getFoodsList = async () => {
+    try {
+      const data = await Service.fetchAllFoods()
+      setFoods(data)
+      console.log(data)
+    } catch (err) {
+      console.error(err);
+    };
+  }
+  useEffect(() => {
+    getFoodsList()
+  },[])
   return (
     <>
       <Heading size="3xl" as="h2" className="!font-opensans text-center">
@@ -32,33 +54,28 @@ export default function PopularMenu() {
         </TabList>
 
         <div className="flex flex-col items-center justify-start w-full gap-12">
-          {[...Array(5)].map((_, index) => (
-            <TabPanel
-              key={`tab-panel${index}`}
-              className="items-center w-full absolute"
-            >
-              <div className="flex flex-col items-center justify-start w-full">
+        {foods?.slice(0, next)?.map((food) => (
+   
+              <div key={food.id} className="flex flex-col items-center justify-start w-full">
                 <div className="flex flex-col items-center justify-start w-full">
                   <div className="justify-center w-full gap-[35px] grid-cols-3 md:grid-cols-2 md:gap-5 sm:grid-cols-1 grid">
                     <div className="flex flex-col items-center justify-center w-full gap-[34px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]">
                       <Img
-                        src="images/menuImg/img_pngitem_41084.png"
+                        src={`images/menuImg/${food.foodImg}`}
                         alt="pngitem41084"
                         className="w-[270px] md:h-auto mt-1.5 object-cover"
                       />
                       <div className="flex flex-col items-center justify-start w-full mb-1.5">
                         <div className="flex flex-col items-center justify-start w-full gap-[11px]">
                           <Heading size="lg" as="h2" className="text-center">
-                            Spaghetti
+                            {food.foodName}
                           </Heading>
                           <Text
                             size="xs"
                             as="p"
                             className="!text-gray-800_02 text-center"
                           >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Egestas consequat mi eget auctor aliquam,
-                            diam.{" "}
+                            {food.description}
                           </Text>
                         </div>
                         <RatingBar
@@ -70,207 +87,7 @@ export default function PopularMenu() {
                           className="flex justify-between mt-[13px] rounded-[1px]"
                         />
                         <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
-                          <Heading as="h3">$12.05</Heading>
-                          <Button
-                            size="xl"
-                            className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
-                          >
-                            Order now
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-center justify-center w-full gap-[30px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]  ">
-                      <Img
-                        src="images/menuImg/img_pngitem_1447549.png"
-                        alt="pngitem1447549"
-                        className="w-[270px] md:h-auto mt-1.5 object-cover"
-                      />
-                      <div className="flex flex-col items-center justify-start w-full mb-1.5">
-                        <div className="flex flex-col items-center justify-start w-full gap-[15px]">
-                          <Heading size="lg" as="h4" className="text-center">
-                            Gnocchi
-                          </Heading>
-                          <Text
-                            size="xs"
-                            as="p"
-                            className="!text-gray-800_02 text-center"
-                          >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Egestas consequat mi eget auctor aliquam,
-                            diam.{" "}
-                          </Text>
-                        </div>
-                        <RatingBar
-                          value={5}
-                          isEditable={true}
-                          color="#f54748"
-                          activeColor="#f54748"
-                          size={24}
-                          className="flex justify-between mt-[13px] rounded-[1px]"
-                        />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
-                          <Heading as="h5">$12.05</Heading>
-                          <Button
-                            size="xl"
-                            className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
-                          >
-                            Order now
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-center justify-center w-full gap-[30px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]">
-                      <Img
-                        src="images/menuImg/img_pngegg.png"
-                        alt="pngegg_one"
-                        className="w-[270px] md:h-auto mt-1.5 object-cover"
-                      />
-                      <div className="flex flex-col items-center justify-start w-full mb-1.5">
-                        <div className="flex flex-col items-center justify-start w-full gap-[15px]">
-                          <Heading size="lg" as="h6" className="text-center">
-                            Rovioli
-                          </Heading>
-                          <Text
-                            size="xs"
-                            as="p"
-                            className="!text-gray-800_02 text-center"
-                          >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Egestas consequat mi eget auctor aliquam,
-                            diam.{" "}
-                          </Text>
-                        </div>
-                        <RatingBar
-                          value={5}
-                          isEditable={true}
-                          color="#f54748"
-                          activeColor="#f54748"
-                          size={24}
-                          className="flex justify-between mt-[13px] rounded-[1px]"
-                        />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
-                          <Heading as="h4">$12.05</Heading>
-                          <Button
-                            size="xl"
-                            className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
-                          >
-                            Order now
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-center justify-center w-full gap-[31px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]">
-                      <Img
-                        src="images/menuImg/img_pngwing.png"
-                        alt="pngwing_one"
-                        className="w-[270px] md:h-auto sm:w-full mt-1.5 object-cover"
-                      />
-                      <div className="flex flex-col items-center justify-start w-full mb-1.5">
-                        <div className="flex flex-col items-center justify-start w-full gap-3.5">
-                          <Heading size="lg" as="h3" className="text-center">
-                            Penne Alla Vodak
-                          </Heading>
-                          <Text
-                            size="xs"
-                            as="p"
-                            className="!text-gray-800_02 text-center"
-                          >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Egestas consequat mi eget auctor aliquam,
-                            diam.{" "}
-                          </Text>
-                        </div>
-                        <RatingBar
-                          value={5}
-                          isEditable={true}
-                          color="#f54748"
-                          activeColor="#f54748"
-                          size={24}
-                          className="flex justify-between mt-[13px] rounded-[1px]"
-                        />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
-                          <Heading as="h4">$12.05</Heading>
-                          <Button
-                            size="xl"
-                            className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
-                          >
-                            Order now
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-center justify-center w-full gap-[30px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]">
-                      <Img
-                        src="images/menuImg/img_pngitem_5290903.png"
-                        alt="pngitem5290903"
-                        className="w-[270px] md:h-auto mt-1.5 object-cover"
-                      />
-                      <div className="flex flex-col items-center justify-start w-full mb-1.5">
-                        <div className="flex flex-col items-center justify-start w-full gap-[15px]">
-                          <Heading size="lg" as="h3" className="text-center">
-                          Pepperoni Pizza
-                          </Heading>
-                          <Text
-                            size="xs"
-                            as="p"
-                            className="!text-gray-800_02 text-center"
-                          >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Egestas consequat mi eget auctor aliquam,
-                            diam.{" "}
-                          </Text>
-                        </div>
-                        <RatingBar
-                          value={5}
-                          isEditable={true}
-                          color="#f54748"
-                          activeColor="#f54748"
-                          size={24}
-                          className="flex justify-between mt-[13px] rounded-[1px]"
-                        />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
-                          <Heading as="h4">$12.05</Heading>
-                          <Button
-                            size="xl"
-                            className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
-                          >
-                            Order now
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex flex-col items-center justify-center w-full gap-[34px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]">
-                      <Img
-                        src="images/menuImg/img_pngwing_270x270.png"
-                        alt="pngwing_one"
-                        className="w-[270px] md:h-auto mt-1.5 object-cover"
-                      />
-                      <div className="flex flex-col items-center justify-start w-full mb-1.5">
-                        <div className="flex flex-col items-center justify-start w-full gap-[11px]">
-                          <Heading size="lg" as="h3" className="text-center">
-                            Splitza Signature
-                          </Heading>
-                          <Text
-                            size="xs"
-                            as="p"
-                            className="!text-gray-800_02 text-center"
-                          >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Egestas consequat mi eget auctor aliquam,
-                            diam.{" "}
-                          </Text>
-                        </div>
-                        <RatingBar
-                          value={5}
-                          isEditable={true}
-                          color="#f54748"
-                          activeColor="#f54748"
-                          size={24}
-                          className="flex justify-between mt-[13px] rounded-[1px]"
-                        />
-                        <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
-                          <Heading as="h4">$12.05</Heading>
+                          <Heading as="h3">${food.originalPrice}</Heading>
                           <Button
                             size="xl"
                             className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
@@ -283,8 +100,10 @@ export default function PopularMenu() {
                   </div>
                 </div>
               </div>
-            </TabPanel>
+      
           ))}
+          
+          
           <div className="flex flex-row justify-start items-center w-[22%] md:w-full gap-2.5">
             <Img
               src="images/img_arrow_left.svg"
