@@ -42,7 +42,7 @@ export default function PopularMenu() {
                   <div className="justify-center w-full gap-[35px] grid-cols-3 md:grid-cols-2 md:gap-5 sm:grid-cols-1 grid">
                     <div className="flex flex-col items-center justify-center w-full gap-[34px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]">
                       <Img
-                        src="images/img_pngitem_41084.png"
+                        src="images/menuImg/img_pngitem_41084.png"
                         alt="pngitem41084"
                         className="w-[270px] md:h-auto mt-1.5 object-cover"
                       />
@@ -82,7 +82,7 @@ export default function PopularMenu() {
                     </div>
                     <div className="flex flex-col items-center justify-center w-full gap-[30px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]  ">
                       <Img
-                        src="images/img_pngitem_1447549.png"
+                        src="images/menuImg/img_pngitem_1447549.png"
                         alt="pngitem1447549"
                         className="w-[270px] md:h-auto mt-1.5 object-cover"
                       />
@@ -122,7 +122,7 @@ export default function PopularMenu() {
                     </div>
                     <div className="flex flex-col items-center justify-center w-full gap-[30px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]">
                       <Img
-                        src="images/img_pngegg.png"
+                        src="images/menuImg/img_pngegg.png"
                         alt="pngegg_one"
                         className="w-[270px] md:h-auto mt-1.5 object-cover"
                       />
@@ -162,7 +162,7 @@ export default function PopularMenu() {
                     </div>
                     <div className="flex flex-col items-center justify-center w-full gap-[31px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]">
                       <Img
-                        src="images/img_pngwing.png"
+                        src="images/menuImg/img_pngwing.png"
                         alt="pngwing_one"
                         className="w-[270px] md:h-auto sm:w-full mt-1.5 object-cover"
                       />
@@ -202,14 +202,14 @@ export default function PopularMenu() {
                     </div>
                     <div className="flex flex-col items-center justify-center w-full gap-[30px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]">
                       <Img
-                        src="images/img_pngitem_5290903.png"
+                        src="images/menuImg/img_pngitem_5290903.png"
                         alt="pngitem5290903"
                         className="w-[270px] md:h-auto mt-1.5 object-cover"
                       />
                       <div className="flex flex-col items-center justify-start w-full mb-1.5">
                         <div className="flex flex-col items-center justify-start w-full gap-[15px]">
                           <Heading size="lg" as="h3" className="text-center">
-                            Risoto
+                          Pepperoni Pizza
                           </Heading>
                           <Text
                             size="xs"
@@ -242,7 +242,7 @@ export default function PopularMenu() {
                     </div>
                     <div className="flex flex-col items-center justify-center w-full gap-[34px] p-[30px] sm:p-5 bg-white-A700 rounded-[40px]">
                       <Img
-                        src="images/img_pngwing_270x270.png"
+                        src="images/menuImg/img_pngwing_270x270.png"
                         alt="pngwing_one"
                         className="w-[270px] md:h-auto mt-1.5 object-cover"
                       />
