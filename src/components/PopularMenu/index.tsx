@@ -18,11 +18,9 @@ interface Food {
 export default function PopularMenu() {
   const [foods, setFoods] = useState<Food[]>([]);
   const [displayFoods, setDisplayFoods] = useState<Food[]>([]);
+  const [curr, setCurr] = useState(0);
   const [next, setNext] = useState(initialFoodItems);
 
-  const handleMoreFoodItems = () => {
-    setNext(next + nextRow);
-  };
   const getFoodsList = async () => {
     try {
       const data = await Service.fetchAllFoods();
@@ -43,6 +41,16 @@ export default function PopularMenu() {
       setDisplayFoods(filtered);
     }
   };
+
+  const nextFoods = () => {
+    setCurr(curr + nextRow);
+    setNext(next + nextRow);
+  };
+
+  const prevFoods = () => {
+    setCurr(curr - nextRow);
+    setNext(next - nextRow);
+  };
   useEffect(() => {
     getFoodsList();
   }, []);
@@ -52,7 +60,7 @@ export default function PopularMenu() {
         Our Popular Menu
       </Heading>
       <Tabs
-        className="flex flex-col items-center  w-full gap-[50px]"
+        className="flex flex-col items-center w-full gap-[50px]"
         selectedTabClassName="!text-white-A700 bg-red-400 rounded-[16px]"
         selectedTabPanelClassName="relative tab-panel--selected"
       >
@@ -89,7 +97,7 @@ export default function PopularMenu() {
           </Tab>
         </TabList>
         <div className="flex flex-wrap">
-          {displayFoods?.slice(0, next)?.map((food) => (
+          {displayFoods?.slice(curr, next)?.map((food) => (
             <div className="w-1/3 md:w-1/2 sm:w-full p-4" key={food.id}>
               <div className="flex flex-col items-center justify-start w-full bg-white-A700 rounded-[40px] p-[30px] sm:p-5 gap-[34px]">
                 <Img
@@ -131,51 +139,37 @@ export default function PopularMenu() {
           ))}
         </div>
 
-        <div className="flex flex-row justify-start items-center w-[22%] md:w-full gap-2.5">
-          <Img
-            src="images/img_arrow_left.svg"
-            alt="arrowleft_one"
-            className="h-[15px] w-[15px]"
-          />
-          <div className="flex flex-row justify-between w-[71%]">
-            <div className="flex flex-col items-center justify-start h-[35px] w-[35px]">
-              <Button
-                color="gray_900"
-                size="sm"
-                className="tracking-[-0.50px] font-inter font-semibold min-w-[35px] rounded sm:min-w-full"
-              >
-                1
-              </Button>
-            </div>
-            <div className="flex flex-row w-[48%] gap-2.5">
-              <div className="flex flex-col items-center justify-start h-[35px] w-[44%]">
-                <Button
-                  color="gray_200"
-                  size="sm"
-                  className="tracking-[-0.50px] font-inter font-semibold min-w-[35px] rounded sm:min-w-full"
-                >
-                  2
-                </Button>
-              </div>
-              <div className="flex flex-col items-center justify-start h-[35px] w-[44%]">
-                <Button
-                  color="gray_200"
-                  size="sm"
-                  className="tracking-[-0.50px] font-inter font-semibold min-w-[35px] rounded sm:min-w-full"
-                >
-                  3
-                </Button>
-              </div>
-            </div>
-            <Button color="gray_200" size="xs" className="w-[35px] rounded">
-              <Img src="images/img_bx_bx_dots_horizontal_rounded.svg" />
+        <div className="flex flex-row justify-center w-full items-center     ">
+          <div className="flex flex-row gap-10">
+            <Button
+              onClick={prevFoods}
+              disabled={curr <= 0}
+              color="blue_gray_100_02"
+              size="sm"
+              className={`tracking-[-0.50px] font-inter font-semibold min-w-[80px] rounded transition-all duration-300 
+             ${
+               curr <= 0
+                 ? "bg-gray-400 cursor-not-allowed"
+                 : "bg-blue-500 hover:bg-blue-700 cursor-pointer"
+             }`}
+            >
+              Prev
+            </Button>
+            <Button
+              onClick={nextFoods}
+              disabled={next >= displayFoods.length}
+              color="blue_gray_100_02"
+              size="sm"
+              className={`tracking-[-0.50px] font-inter font-semibold min-w-[80px] rounded transition-all duration-300 
+             ${
+               next >= displayFoods.length
+                 ? "bg-gray-400 cursor-not-allowed"
+                 : " bg-blue-500 hover:bg-blue-700 cursor-pointer"
+             }`}
+            >
+              Next
             </Button>
           </div>
-          <Img
-            src="images/img_akar_icons_chevron_left.svg"
-            alt="akaricons_one"
-            className="h-[15px] w-[15px]"
-          />
         </div>
       </Tabs>
     </>
