@@ -128,7 +128,7 @@ export default function PopularMenu() {
                     <Heading as="h3">${food.originalPrice.toFixed(2)}</Heading>
                     <Button
                       size="xl"
-                      className="sm:px-5 font-semibold min-w-[158px] rounded-lg"
+                      className="sm:px-5 font-semibold min-w-[158px] rounded-lg hover:bg-red-700 transition-all duration-300"
                     >
                       Order now
                     </Button>
