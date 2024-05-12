@@ -12,10 +12,12 @@ interface Food {
   foodImg: string;
   description: string;
   originalPrice: number;
+  categories: string[];
 }
 
 export default function PopularMenu() {
   const [foods, setFoods] = useState<Food[]>([]);
+  const [displayFoods, setDisplayFoods] = useState<Food[]>([]);
   const [next, setNext] = useState(initialFoodItems);
 
   const handleMoreFoodItems = () => {
@@ -25,9 +27,20 @@ export default function PopularMenu() {
     try {
       const data = await Service.fetchAllFoods();
       setFoods(data);
+      setDisplayFoods(data);
       console.log(data);
     } catch (err) {
       console.error(err);
+    }
+  };
+  const filterRecipes = async (category: string) => {
+    if (category == "All") {
+      setDisplayFoods(foods);
+    } else {
+      const filtered = foods.filter((food) =>
+        food.categories.includes(category)
+      );
+      setDisplayFoods(filtered);
     }
   };
   useEffect(() => {
@@ -44,24 +57,39 @@ export default function PopularMenu() {
         selectedTabPanelClassName="relative tab-panel--selected"
       >
         <TabList className="flex flex-row justify-between w-full ">
-          <Tab className="text-gray-900 text-lg font-semibold ml-2 sm:text-sm px-1 ">
+          <Tab
+            onClick={() => filterRecipes("All")}
+            className="text-gray-900 text-lg font-semibold ml-2 sm:text-sm px-1 "
+          >
             All category
           </Tab>
-          <Tab className="text-gray-900 text-lg font-normal sm:text-sm px-1">
+          <Tab
+            onClick={() => filterRecipes("dinner")}
+            className="text-gray-900 text-lg font-normal sm:text-sm px-1"
+          >
             Dinner
           </Tab>
-          <Tab className="text-gray-900 text-lg font-normal sm:text-sm px-1 ">
+          <Tab
+            onClick={() => filterRecipes("lunch")}
+            className="text-gray-900 text-lg font-normal sm:text-sm px-1 "
+          >
             Lunch
           </Tab>
-          <Tab className="text-gray-900 text-lg font-normal sm:text-sm px-1">
+          <Tab
+            onClick={() => filterRecipes("dessert")}
+            className="text-gray-900 text-lg font-normal sm:text-sm px-1"
+          >
             Dessert
           </Tab>
-          <Tab className="text-gray-900 text-lg font-normal mr-2 sm:mr-5 sm:text-sm px-1 ">
-            Drink
+          <Tab
+            onClick={() => filterRecipes("drinks")}
+            className="text-gray-900 text-lg font-normal mr-2 sm:mr-5 sm:text-sm px-1 "
+          >
+            Drinks
           </Tab>
         </TabList>
         <div className="flex flex-wrap">
-          {foods?.slice(0, next)?.map((food) => (
+          {displayFoods?.slice(0, next)?.map((food) => (
             <div className="w-1/3 md:w-1/2 sm:w-full p-4" key={food.id}>
               <div className="flex flex-col items-center justify-start w-full bg-white-A700 rounded-[40px] p-[30px] sm:p-5 gap-[34px]">
                 <Img
