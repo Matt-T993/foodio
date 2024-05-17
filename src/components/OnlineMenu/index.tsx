@@ -16,7 +16,7 @@ export default function OnlineMenu() {
             <div className="flex flex-col items-center justify-start w-full p-5 bg-white-A700 rounded-[45px]">
               <div className="flex flex-row justify-center items-center h-[173px] w-[173px]">
                 <Img
-                  src="images/img_kisspng_italian.png"
+                  src="images/menuImg/img_kisspng_italian.png"
                   alt="spaghetti_one"
                   className="h-[173px] w-[173px] md:h-auto rounded-[50%]"
                 />
@@ -69,7 +69,7 @@ export default function OnlineMenu() {
             </div>
             <div className="flex flex-col items-center justify-start w-full p-5 bg-white-A700 rounded-[45px]">
               <Img
-                src="images/img_picture.png"
+                src="images/menuImg/img_picture.png"
                 alt="picture_one"
                 className="w-[174px] md:h-auto object-cover"
               />
@@ -123,7 +123,7 @@ export default function OnlineMenu() {
             </div>
             <div className="flex flex-col items-center justify-start w-full p-5 bg-white-A700 rounded-[45px]">
               <Img
-                src="images/img_picture.png"
+                src="images/menuImg/img_picture.png"
                 alt="picture_one"
                 className="w-[174px] md:h-auto object-cover"
               />
@@ -176,7 +176,7 @@ export default function OnlineMenu() {
             </div>
             <div className="flex flex-col items-center justify-start w-full p-5 bg-white-A700 rounded-[45px]">
               <Img
-                src="images/img_picture.png"
+                src="images/menuImg/img_picture.png"
                 alt="picture_one"
                 className="w-[174px] md:h-auto object-cover"
               />
@@ -228,7 +228,7 @@ export default function OnlineMenu() {
             </div>
             <div className="flex flex-col items-center justify-start w-full p-5 bg-white-A700 rounded-[45px]">
               <Img
-                src="images/img_picture.png"
+                src="images/menuImg/img_picture.png"
                 alt="picture_one"
                 className="w-[174px] md:h-auto object-cover"
               />
@@ -282,7 +282,7 @@ export default function OnlineMenu() {
             </div>
             <div className="flex flex-col items-center justify-start w-full p-5 bg-white-A700 rounded-[45px]">
               <Img
-                src="images/img_picture.png"
+                src="images/menuImg/img_picture.png"
                 alt="picture_one"
                 className="w-[174px] md:h-auto object-cover"
               />
