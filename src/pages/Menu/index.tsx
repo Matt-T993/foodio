@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import { Img, Button, Heading, RatingBar, Text } from "../../components";
+
 import Footer from "../../components/Footer";
-import { TabPanel, TabList, Tab, Tabs } from "react-tabs";
+
 import MainNavbar from "components/MainNavbar";
 import PopularMenu from "components/PopularMenu";
 import Login from "modals/Login";
-import Navbar from "components/Navbar";
+
 
 export default function MenuPage() {
   // State to manage modal visibility
