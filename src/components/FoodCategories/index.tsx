@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../../components";
 
-export default function FoodCategories() {
+interface IFoodCategories {
+  foodType: (type: string) => void;
+}
+
+export default function FoodCategories({ foodType }: IFoodCategories) {
+  const [activeButton, setActiveButton] = useState("All");
+
+  const buttonClasses = (buttonName: string) =>
+    `w-full sm:px-5 ${
+      activeButton === buttonName ? "bg-red-500 text-white" : ""
+    }`;
+
+  const handleClick = (type: string) => {
+    setActiveButton(type);
+    foodType(type);
+  };
+
   return (
     <div className="flex flex-row md:flex-col justify-start w-full gap-7 md:gap-5">
       <div className="flex flex-row justify-start w-[18%] md:w-full">
@@ -9,16 +25,19 @@ export default function FoodCategories() {
           color="gray_400_01"
           size="5xl"
           shape="round"
-          className="w-full sm:px-5"
+          className={buttonClasses("All")}
+          onClick={() => handleClick("All")}
         >
           All Categories
         </Button>
       </div>
       <div className="flex flex-row justify-start w-[21%] md:w-full">
         <Button
+          color="gray_400_01"
           size="5xl"
           shape="round"
-          className="w-full sm:px-5 font-semibold"
+          className={buttonClasses("Pasta")}
+          onClick={() => handleClick("Pasta")}
         >
           Pasta
         </Button>
@@ -29,7 +48,8 @@ export default function FoodCategories() {
             color="gray_400_01"
             size="5xl"
             shape="round"
-            className="w-full sm:px-5"
+            className={buttonClasses("Pizza")}
+            onClick={() => handleClick("Pizza")}
           >
             Pizza
           </Button>
@@ -39,7 +59,8 @@ export default function FoodCategories() {
             color="gray_400_01"
             size="5xl"
             shape="round"
-            className="w-full sm:px-5"
+            className={buttonClasses("Dessert")}
+            onClick={() => handleClick("Dessert")}
           >
             Dessert
           </Button>
@@ -49,7 +70,8 @@ export default function FoodCategories() {
             color="gray_400_01"
             size="5xl"
             shape="round"
-            className="w-full sm:px-5"
+            className={buttonClasses("Drinks")}
+            onClick={() => handleClick("Drinks")}
           >
             Drink
           </Button>

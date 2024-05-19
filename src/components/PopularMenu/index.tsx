@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Text, Heading, Button, Img, RatingBar } from "../../components";
-import { TabPanel, TabList, Tab, Tabs } from "react-tabs";
+import { TabList, Tab, Tabs } from "react-tabs";
 import Service from "service/service";
+import { Link } from "react-router-dom";
 
 const initialFoodItems = 6;
 const nextRow = 6;
@@ -32,7 +33,7 @@ export default function PopularMenu() {
     }
   };
   const filterRecipes = async (category: string) => {
-    if (category == "All") {
+    if (category === "All") {
       setDisplayFoods(foods);
     } else {
       const filtered = foods.filter((food) =>
@@ -126,12 +127,14 @@ export default function PopularMenu() {
                   />
                   <div className="flex flex-row justify-between items-center w-[95%] md:w-full mt-[30px] md:flex-col">
                     <Heading as="h3">${food.originalPrice.toFixed(2)}</Heading>
+                    <Link to="/orderonline">
                     <Button
                       size="xl"
                       className="sm:px-5 font-semibold min-w-[158px] rounded-lg hover:bg-red-700 transition-all duration-300"
                     >
                       Order now
                     </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
