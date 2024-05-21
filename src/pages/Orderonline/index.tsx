@@ -8,6 +8,8 @@ import OrderList from "components/OrderList";
 import FoodCategories from "components/FoodCategories";
 import Login from "modals/Login";
 import Service from "service/service";
+import { useSelector } from "react-redux";
+import { RootState } from "redux/store";
 
 interface Food {
   id: string;
@@ -19,15 +21,26 @@ interface Food {
   categories: string[];
 }
 
+interface Cart {
+  id: string;
+  foodName: string;
+  price: number;
+  quantity: number;
+  userEmail: string;
+}
+
 export default function OrderonlinePage() {
   // State to manage modal visibility
   const [isLoginModalOpen, setLoginModalOpen] = useState<boolean>(false);
   const [foods, setFoods] = useState<Food[]>([]);
   const [displayFoods, setDisplayFoods] = useState<Food[]>([]);
+  const [cart, setCart] = useState<Cart[]>([])
+  const user = useSelector((state: RootState) => state.auth.user);
 
   useEffect(() => {
     getFoodsList();
-  }, []);
+    getCartByUserEmail(user.email);
+  }, [user.email]);
 
   const getFoodsList = async () => {
     try {
@@ -48,6 +61,46 @@ export default function OrderonlinePage() {
       setDisplayFoods(filtered);
     }
   };
+
+
+  const getCartByUserEmail = async (userEmail: string) => {
+    try {
+      const data = await Service.fetchCartByUserEmail(userEmail);
+      setCart(data);
+      console.log(data);
+    } catch (err) {
+      console.error(err);
+    }
+
+  }
+  const handleAddToCart = async (foodId: string, newQuatity: number) => {
+    if (!user || !user.email) {
+      console.error("User is not logged in");
+      return;
+    }
+
+    try {
+      await Service.addToCart(user.email, foodId, newQuatity );
+      console.log("Item added to cart successfully");
+      getCartByUserEmail(user.email);
+    } catch (error) {
+      console.error("Error adding item to cart:", error);
+    }
+  };
+
+  const increaseQuatity = (foodId: string) => {
+    handleAddToCart(foodId, 1 )
+  }
+
+  const decreaseQuatity = (foodId: string) => {
+    handleAddToCart(foodId, -1)
+
+  }
+  const quantityOfItem = (foodName: string) => {
+    const cartItem = cart.find((item) => item.foodName === foodName);
+    return cartItem ? cartItem.quantity : 0;
+  };
+
 
 
 
@@ -74,8 +127,8 @@ export default function OrderonlinePage() {
               <div className="flex flex-col items-start justify-start w-full gap-[59px]">
                 <FoodCategories foodType={filterByFoodType} />
                 <div className="flex flex-row md:flex-col justify-start  w-full gap-[46px] md:gap-5">
-                  <OnlineMenu displayFoods={displayFoods}/>
-                  <OrderList />
+                  <OnlineMenu displayFoods={displayFoods} increaseQuatity={increaseQuatity} decreaseQuatity={decreaseQuatity} quantityOfItem={quantityOfItem}  />
+                  <OrderList cart={cart} setCart={setCart} increaseQuatity={increaseQuatity} decreaseQuatity={decreaseQuatity} quantityOfItem={quantityOfItem} food={foods}  />
                 </div>
                 <div className="flex flex-row sm:flex-col justify-start items-center w-[22%] md:w-full ml-[242px] gap-2.5 md:ml-5 sm:gap-5">
                   <Img
