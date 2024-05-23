@@ -8,6 +8,8 @@ import OrderList from "components/OrderList";
 import FoodCategories from "components/FoodCategories";
 import Login from "modals/Login";
 import Service from "service/service";
+import { useSelector } from "react-redux";
+import { RootState } from "redux/store";
 
 interface Food {
   id: string;
@@ -19,15 +21,28 @@ interface Food {
   categories: string[];
 }
 
+interface Cart {
+  id: string;
+  foodName: string;
+  price: number;
+  quantity: number;
+  userEmail: string;
+}
+
 export default function OrderonlinePage() {
   // State to manage modal visibility
   const [isLoginModalOpen, setLoginModalOpen] = useState<boolean>(false);
   const [foods, setFoods] = useState<Food[]>([]);
   const [displayFoods, setDisplayFoods] = useState<Food[]>([]);
+  const [cart, setCart] = useState<Cart[]>([]);
+
+  const user = useSelector((state: RootState) => state.auth.user);
+
 
   useEffect(() => {
     getFoodsList();
-  }, []);
+    getCartByUserEmail(user.email);
+  }, [user.email]);
 
   const getFoodsList = async () => {
     try {
@@ -49,7 +64,41 @@ export default function OrderonlinePage() {
     }
   };
 
+  const getCartByUserEmail = async (userEmail: string) => {
+    try {
+      const data = await Service.fetchCartByUserEmail(userEmail);
+      setCart(data);
+      console.log(data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  const handleAddToCart = async (foodId: string, newQuatity: number) => {
+    if (!user || !user.email) {
+      console.error("User is not logged in");
+      return;
+    }
 
+    try {
+      await Service.addToCart(user.email, foodId, newQuatity);
+      console.log("Item added to cart successfully");
+      getCartByUserEmail(user.email);
+    } catch (error) {
+      console.error("Error adding item to cart:", error);
+    }
+  };
+
+  const increaseQuatity = (foodId: string) => {
+    handleAddToCart(foodId, 1);
+  };
+
+  const decreaseQuatity = (foodId: string) => {
+    handleAddToCart(foodId, -1);
+  };
+  const quantityOfItem = (foodName: string) => {
+    const cartItem = cart.find((item) => item.foodName === foodName);
+    return cartItem ? cartItem.quantity : 0;
+  };
 
   // Handler to open the modal
   const openLoginModal = () => setLoginModalOpen(true);
@@ -61,7 +110,10 @@ export default function OrderonlinePage() {
     <>
       <Helmet>
         <title>foodio - Order Online</title>
-        <meta name="description" content="Web site created using create-react-app" />
+        <meta
+          name="description"
+          content="Web site created using create-react-app"
+        />
       </Helmet>
       <div className="flex flex-col items-center justify-start w-full pt-[51px] gap-[139px] md:pt-5 bg-gray-50">
         <div className="flex flex-col items-center justify-start w-full gap-[103px] md:px-5 max-w-[1112px]">
@@ -74,59 +126,22 @@ export default function OrderonlinePage() {
               <div className="flex flex-col items-start justify-start w-full gap-[59px]">
                 <FoodCategories foodType={filterByFoodType} />
                 <div className="flex flex-row md:flex-col justify-start  w-full gap-[46px] md:gap-5">
-                  <OnlineMenu displayFoods={displayFoods}/>
-                  <OrderList />
-                </div>
-                <div className="flex flex-row sm:flex-col justify-start items-center w-[22%] md:w-full ml-[242px] gap-2.5 md:ml-5 sm:gap-5">
-                  <Img
-                    src="images/img_arrow_left.svg"
-                    alt="arrowleft_one"
-                    className="h-[15px] w-[15px]"
+                  <OnlineMenu
+                    displayFoods={displayFoods}
+                    increaseQuatity={increaseQuatity}
+                    decreaseQuatity={decreaseQuatity}
+                    quantityOfItem={quantityOfItem}
                   />
-                  <div className="flex flex-row justify-between w-[71%] sm:w-full">
-                    <div className="flex flex-col items-center justify-start h-[35px] w-[35px]">
-                      <Button
-                        color="gray_900"
-                        size="sm"
-                        className="tracking-[-0.50px] font-inter font-semibold min-w-[35px] rounded sm:min-w-full"
-                      >
-                        1
-                      </Button>
-                    </div>
-                    <div className="flex flex-row w-[48%] gap-2.5">
-                      <div className="flex flex-col items-center justify-start h-[35px] w-[44%]">
-                        <Button
-                          color="gray_200"
-                          size="sm"
-                          className="tracking-[-0.50px] font-inter font-semibold min-w-[35px] rounded sm:min-w-full"
-                        >
-                          2
-                        </Button>
-                      </div>
-                      <div className="flex flex-col items-center justify-start h-[35px] w-[44%]">
-                        <Button
-                          color="gray_200"
-                          size="sm"
-                          className="tracking-[-0.50px] font-inter font-semibold min-w-[35px] rounded sm:min-w-full"
-                        >
-                          3
-                        </Button>
-                      </div>
-                    </div>
-                    <Button
-                      color="gray_200"
-                      size="xs"
-                      className="w-[35px] rounded"
-                    >
-                      <Img src="images/img_bx_bx_dots_horizontal_rounded.svg" />
-                    </Button>
-                  </div>
-                  <Img
-                    src="images/img_akar_icons_chevron_left.svg"
-                    alt="akaricons_one"
-                    className="h-[15px] w-[15px]"
+                  <OrderList
+                    cart={cart}
+                    setCart={setCart}
+                    increaseQuatity={increaseQuatity}
+                    decreaseQuatity={decreaseQuatity}
+                    quantityOfItem={quantityOfItem}
+                    food={foods}
                   />
                 </div>
+                
               </div>
             </div>
           </div>
