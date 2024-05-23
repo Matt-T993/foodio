@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Img, Text, Heading, RatingBar } from "../../components";
+import { Img, Text, Heading, RatingBar, Button } from "../../components";
 
 interface Food {
   id: string;
@@ -21,6 +21,7 @@ interface IOnlineMenu {
 }
 
 const initialFoodItems = 9;
+const nextRow = 9;
 
 export default function OnlineMenu({
   displayFoods,
@@ -31,6 +32,16 @@ export default function OnlineMenu({
   const [curr, setCurr] = useState(0);
   const [next, setNext] = useState(initialFoodItems);
 
+
+  const nextFoods = () => {
+    setCurr(curr + nextRow);
+    setNext(next + nextRow);
+  };
+
+  const prevFoods = () => {
+    setCurr(curr - nextRow);
+    setNext(next - nextRow);
+  };
   return (
     <div className="flex flex-col items-start justify-start w-[66%] md:w-full gap-12 md:items-center">
       <div className="flex flex-col items-start justify-start gap-2.5">
@@ -103,6 +114,38 @@ export default function OnlineMenu({
           </div>
         </div>
       </div>
+      <div className="flex flex-row justify-center w-full items-center     ">
+                  <div className="flex flex-row gap-10">
+                    <Button
+                      onClick={prevFoods}
+                      disabled={curr <= 0}
+                      color="blue_gray_100_02"
+                      size="sm"
+                      className={`tracking-[-0.50px] font-inter font-semibold min-w-[80px] rounded transition-all duration-300 
+             ${
+               curr <= 0
+                 ? "bg-gray-400 cursor-not-allowed"
+                 : "bg-blue-500 hover:bg-blue-700 cursor-pointer"
+             }`}
+                    >
+                      Prev
+                    </Button>
+                    <Button
+                      onClick={nextFoods}
+                      disabled={next >= displayFoods.length}
+                      color="blue_gray_100_02"
+                      size="sm"
+                      className={`tracking-[-0.50px] font-inter font-semibold min-w-[80px] rounded transition-all duration-300 
+             ${
+               next >= displayFoods.length
+                 ? "bg-gray-400 cursor-not-allowed"
+                 : " bg-blue-500 hover:bg-blue-700 cursor-pointer"
+             }`}
+                    >
+                      Next
+                    </Button>
+                  </div>
+                </div>
     </div>
   );
 }
