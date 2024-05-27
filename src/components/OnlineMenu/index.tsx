@@ -18,6 +18,7 @@ interface IOnlineMenu {
   increaseQuatity: (foodId: string) => void;
   decreaseQuatity: (foodId: string) => void;
   quantityOfItem: (foodName: string) => number;
+  activeFoodType: string;
 }
 
 const initialFoodItems = 9;
@@ -27,7 +28,8 @@ export default function OnlineMenu({
   displayFoods,
   increaseQuatity,
   decreaseQuatity,
-  quantityOfItem
+  quantityOfItem,
+  activeFoodType
 }: IOnlineMenu) {
   const [curr, setCurr] = useState(0);
   const [next, setNext] = useState(initialFoodItems);
@@ -46,7 +48,7 @@ export default function OnlineMenu({
     <div className="flex flex-col items-start justify-start w-[66%] md:w-full gap-12 md:items-center">
       <div className="flex flex-col items-start justify-start gap-2.5">
         <Heading size="lg" as="h2">
-          PASTA
+          {activeFoodType}
         </Heading>
         <div className="h-[2px] w-full bg-red-400" />
       </div>
