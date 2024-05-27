@@ -10,14 +10,15 @@ export default function FoodCategories({ foodType }: IFoodCategories) {
 
   const buttonClasses = (buttonName: string) =>
     `w-full sm:px-5 ${
-      activeButton === buttonName ? "bg-red-500 text-white" : ""
+      activeButton === buttonName ? "bg-red-600 text-white" : ""
     }`;
+
+
 
   const handleClick = (type: string) => {
     setActiveButton(type);
     foodType(type);
   };
-
   return (
     <div className="flex flex-row md:flex-col justify-start w-full gap-7 md:gap-5">
       <div className="flex flex-row justify-start w-[18%] md:w-full">

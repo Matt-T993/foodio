@@ -35,6 +35,7 @@ export default function OrderonlinePage() {
   const [foods, setFoods] = useState<Food[]>([]);
   const [displayFoods, setDisplayFoods] = useState<Food[]>([]);
   const [cart, setCart] = useState<Cart[]>([]);
+  const [activeFoodType, setActiveFoodType] = useState<string>("All");
 
   const user = useSelector((state: RootState) => state.auth.user);
 
@@ -56,6 +57,7 @@ export default function OrderonlinePage() {
   };
 
   const filterByFoodType = (foodType: string) => {
+    setActiveFoodType(foodType);
     if (foodType === "All") {
       setDisplayFoods(foods);
     } else {
@@ -63,7 +65,6 @@ export default function OrderonlinePage() {
       setDisplayFoods(filtered);
     }
   };
-
   const getCartByUserEmail = async (userEmail: string) => {
     try {
       const data = await Service.fetchCartByUserEmail(userEmail);
@@ -131,6 +132,7 @@ export default function OrderonlinePage() {
                     increaseQuatity={increaseQuatity}
                     decreaseQuatity={decreaseQuatity}
                     quantityOfItem={quantityOfItem}
+                    activeFoodType={activeFoodType}
                   />
                   <OrderList
                     cart={cart}

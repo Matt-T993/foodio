@@ -50,6 +50,14 @@ export default function OrderList({
     }
   };
 
+  const total = () => {
+    let price = 0;
+    cart.forEach((item) => {
+      price+= (item.price) * item.quantity
+    })
+    return price;
+  }
+
   return (
     <div className="flex flex-col items-center justify-start w-[31%] md:w-full">
       <div className="flex flex-col items-center justify-center w-full gap-[53px] py-[45px] md:py-5 bg-white-A700 shadow-xs rounded-[20px]">
@@ -143,7 +151,7 @@ export default function OrderList({
                   <Button
                     color="blue_400"
                     shape="round"
-                    className="w-[60px] !rounded-[15px]"
+                    className="w-[60px] !rounded-[15px] cursor-no-drop"
                   >
                     <Img src="images/img_group_170.svg" />
                   </Button>
@@ -158,7 +166,7 @@ export default function OrderList({
               Subtotal
             </Heading>
             <Text size="xl" as="p" className="!text-gray-900">
-              $78.3
+              ${(total()* 0.9).toFixed(2)}
             </Text>
           </div>
           <div className="flex flex-row justify-between w-full">
@@ -166,7 +174,7 @@ export default function OrderList({
               Tax fee
             </Heading>
             <Text size="xl" as="p" className="!text-gray-900">
-              $3.5
+            ${(total() * 0.1).toFixed(2)}
             </Text>
           </div>
           <div className="flex flex-row justify-between w-full">
@@ -182,7 +190,7 @@ export default function OrderList({
               Total
             </Heading>
             <Text size="xl" as="p" className="!text-gray-900">
-              $76.8
+            ${total().toFixed(2)}
             </Text>
           </div>
         </div>
