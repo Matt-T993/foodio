@@ -12,8 +12,10 @@ import {
 import Footer from "../../components/Footer";
 import MainNavbar from "components/MainNavbar";
 import Login from "modals/Login";
+import { useNavigate } from "react-router-dom";
 
 export default function CheckoutPage() {
+  const navigate = useNavigate();
   // State to manage modal visibility
   const [isLoginModalOpen, setLoginModalOpen] = useState<boolean>(false);
 
@@ -41,6 +43,7 @@ export default function CheckoutPage() {
               size="lg"
               shape="circle"
               className="w-[50px]"
+              onClick={() => navigate("/orderonline")}
             >
               <Img src="images/img_back.svg" />
             </Button>
@@ -161,7 +164,7 @@ export default function CheckoutPage() {
                       size="4xl"
                       className="w-full sm:px-5 font-medium rounded-[12px]"
                     >
-                      Order now
+                      Submit
                     </Button>
                   </div>
                 </div>

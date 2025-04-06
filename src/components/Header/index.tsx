@@ -1,7 +1,9 @@
 import React from "react";
 import { Text, Heading, Button, Img } from "../../components";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+  const navigate = useNavigate();
   return (
     <div className="w-full py-[96px] px-6 ">
       <div className="w-full max-w-[1240px] mx-auto">
@@ -28,6 +30,7 @@ export default function Header() {
                 size="5xl"
                 shape="round"
                 className="sm:px-5 font-semibold min-w-[232px] hover:bg-white-A700 hover:text-red-400 transition-all duration-300"
+                onClick={() => navigate("/orderonline")}
               >
                 Order now
               </Button>
@@ -35,7 +38,8 @@ export default function Header() {
                 color="red_400_19"
                 size="5xl"
                 shape="round"
-                className="sm:px-5 font-semibold min-w-[232px] sm:min-w-full  hover:bg-white-A700 hover:text-red-400 transition-all duration-300  "
+                className="sm:px-5 font-semibold min-w-[232px] sm:min-w-full  hover:bg-white-A700 hover:text-red-400 transition-all duration-300 "
+                onClick={() => navigate("/reservation")}
               >
                 Reservation
               </Button>

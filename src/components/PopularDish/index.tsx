@@ -1,7 +1,9 @@
 import React from "react";
 import { Text, Heading, Button, Img } from "../../components";
+import { useNavigate } from "react-router-dom";
 
 export default function PopularDish() {
+  const navigate = useNavigate();
   return (
     <div className="w-full px-6 py-[96px] bg bg-green-50">
       <div className="w-full max-w-[1240px] mx-auto">
@@ -38,8 +40,9 @@ export default function PopularDish() {
               size="5xl"
               shape="round"
               className="sm:px-5 font-semibold min-w-[235px] sm:min-w-full md:mx-auto md:mb-6 "
+              onClick={() => navigate("/orderonline")}
             >
-              Order now
+              order now
             </Button>
           </div>
         </div>

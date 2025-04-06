@@ -1,7 +1,9 @@
 import React from "react";
 import { Heading, Button } from "../../components";
+import { useNavigate } from "react-router-dom";
 
 export default function RSVP() {
+  const navigate = useNavigate();
   return (
     <div className="w-full px-6  ">
       <div className="flex flex-row justify-center w-full mx-auto px-14 py-[93px] md:p-5 bg-red-100 max-w-[1112px] rounded-[24px]">
@@ -14,6 +16,7 @@ export default function RSVP() {
               size="5xl"
               shape="round"
               className="sm:px-5 font-semibold min-w-[232px] hover:bg-white-A700 hover:text-red-400 transition-all duration-300 "
+              onClick={() => navigate("/orderonline")}
             >
               Order now
             </Button>
@@ -22,6 +25,7 @@ export default function RSVP() {
               size="5xl"
               shape="round"
               className="sm:px-5 font-semibold min-w-[232px]  hover:bg-white-A700 hover:text-red-400 transition-all duration-300"
+              onClick={() => navigate("/reservation")}
             >
               Reservation
             </Button>
