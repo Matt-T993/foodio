@@ -55,23 +55,22 @@ export default function CheckoutPage() {
                     Checkout
                   </Heading>
                   <div className="flex flex-col items-center justify-start h-[721px] w-[722px] md:w-full gap-[30px]">
-                    <div className="flex flex-col items-start justify-start w-full gap-2">
+                    <div className="flex flex-col  justify-between w-full gap-2">
                       <Text size="md" as="p" className="!text-gray-900">
                         Shipping address
                       </Text>
                       <div className="flex flex-row md:flex-col justify-start gap-4 md:gap-5">
-                        <Input
-                          shape="round"
-                          name="address"
+                        <input
+                          type="text"
                           placeholder="8502 Preston Rd. Inglewood, Maine 98380"
-                          className="w-[75%] md:w-full !text-gray-900"
+                          className="w-[75%] md:w-full !text-gray-900 rounded-md"
                         />
                         <Button
                           color="indigo_300"
                           size="xl"
                           className="sm:px-5 min-w-[166px] rounded-lg"
                         >
-                          Change
+                          View Order
                         </Button>
                       </div>
                     </div>
@@ -82,49 +81,42 @@ export default function CheckoutPage() {
                       <div className="flex flex-row justify-start w-full">
                         <div className="flex flex-col items-center justify-start w-full gap-6">
                           <div className="flex flex-row sm:flex-col justify-start w-full gap-4 sm:gap-5">
-                            <Input
-                              shape="round"
+                            <input
                               type="text"
-                              name="firstName"
                               placeholder="First name"
-                              className="w-[49%] sm:w-full"
+                              className="w-[49%] sm:w-full rounded-md"
                             />
-                            <Input
-                              shape="round"
+                            <input
                               type="text"
                               name="lastName"
                               placeholder="Last name"
-                              className="w-[49%] sm:w-full"
+                              className="w-[49%] sm:w-full rounded-md"
                             />
                           </div>
                           <div className="flex flex-row sm:flex-col justify-start w-full gap-4 sm:gap-5">
-                            <Input
-                              shape="round"
-                              type="number"
+                            <input
+                              type="text"
                               name="phoneNumber"
                               placeholder="Phone number"
-                              prefix={
-                                <Img
-                                  src="images/img_group_94dropdown.svg"
-                                  alt="Group 94:Dropdown "
-                                />
-                              }
-                              className="w-[49%] sm:w-full gap-4"
+                              // prefix={
+                              //   <Img
+                              //     src="images/img_group_94dropdown.svg"
+                              //     alt="Group 94:Dropdown "
+                              //   />
+                              // }
+                              className="w-[49%] sm:w-full gap-4 rounded-md"
                             />
-                            <Input
-                              shape="round"
+                            <input
                               type="email"
                               name="email"
                               placeholder="Email address"
-                              className="w-[49%] sm:w-full"
+                              className="w-[49%] sm:w-full rounded-md"
                             />
                           </div>
-                          <TextArea
-                            shape="round"
-                            name="message"
+                          <textarea
                             placeholder="Message"
-                            className="w-full sm:pb-5 sm:pr-5 text-gray-500"
-                          />
+                            className="w-full sm:pb-5 sm:pr-5 text-gray-500 rounded-md"
+                          ></textarea>
                         </div>
                       </div>
                     </div>

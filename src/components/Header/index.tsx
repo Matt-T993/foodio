@@ -6,7 +6,7 @@ export default function Header() {
     <div className="w-full py-[96px] px-6 ">
       <div className="w-full max-w-[1240px] mx-auto">
         <div className="flex flex-row justify-between items-center md:flex-col">
-          <div className="w-[50%] flex flex-col md:w-full md:items-center">
+          <div className="w-[50%] flex flex-col md:w-full md:items-center ">
             <Heading
               size="4xl"
               as="h1"

@@ -1,6 +1,7 @@
 import React from "react";
 import { Img, Button, Text, Heading } from "../../components";
 import Service from "service/service";
+import { Link } from "react-router-dom";
 
 interface Cart {
   id: string;
@@ -194,13 +195,15 @@ export default function OrderList({
             </Text>
           </div>
         </div>
+        <Link to="/checkout">
         <Button
           size="2xl"
           shape="round"
-          className="mb-1 sm:px-5 font-semibold min-w-[283px] !rounded-[15px] sm:min-w-full"
+          className="mb-1 sm:px-5 font-semibold min-w-[283px] !rounded-[15px] sm:min-w-full hover:bg-red-700 transition-all duration-300"
         >
           Checkout
         </Button>
+        </Link>
       </div>
     </div>
   );
