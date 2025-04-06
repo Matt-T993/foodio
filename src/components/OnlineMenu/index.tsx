@@ -11,8 +11,6 @@ interface Food {
   categories: string[];
 }
 
-
-
 interface IOnlineMenu {
   displayFoods: Food[];
   increaseQuatity: (foodId: string) => void;
@@ -29,11 +27,10 @@ export default function OnlineMenu({
   increaseQuatity,
   decreaseQuatity,
   quantityOfItem,
-  activeFoodType
+  activeFoodType,
 }: IOnlineMenu) {
   const [curr, setCurr] = useState(0);
   const [next, setNext] = useState(initialFoodItems);
-
 
   const nextFoods = () => {
     setCurr(curr + nextRow);
@@ -56,7 +53,10 @@ export default function OnlineMenu({
         <div className="flex flex-col items-center justify-start w-full">
           <div className="justify-center w-full gap-[30px] grid-cols-3 md:grid-cols-2 md:gap-5 sm:grid-cols-1 grid">
             {displayFoods?.slice(curr, next)?.map((food) => (
-              <div key={food.id} className="flex flex-col items-center justify-start w-full p-5 bg-white-A700 rounded-[45px]">
+              <div
+                key={food.id}
+                className="flex flex-col items-center justify-start w-full p-5 bg-white-A700 rounded-[45px]"
+              >
                 <div className="flex flex-row justify-center items-center h-[173px] w-[173px]">
                   <Img
                     src={`images/menuImg/${food.foodImg}`}
@@ -64,7 +64,7 @@ export default function OnlineMenu({
                     className="h-[173px] w-[173px] md:h-auto rounded-[50%] object-contain"
                   />
                 </div>
-                <Heading size="s" as="h3" className="mt-[21px] text-center">
+                <Heading size="xs" as="h3" className="mt-[21px] text-center ">
                   {food.foodName}
                 </Heading>
                 <RatingBar
@@ -80,8 +80,8 @@ export default function OnlineMenu({
                   as="p"
                   className="w-[94%] mt-[11px] !text-gray-800_01 text-center"
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas
-                  consequat
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Egestas consequat
                 </Text>
                 <Heading size="xs" as="h4" className="mt-[22px]">
                   ${food.originalPrice.toFixed(2)}
@@ -89,8 +89,10 @@ export default function OnlineMenu({
                 <div className="flex flex-row justify-center w-[66%] md:w-full mt-2.5">
                   <div className="flex flex-row justify-between items-center w-full bg-gray-50_01 rounded-[16px]">
                     <div className="flex flex-col items-center justify-start h-[33px] w-[33px]">
-                      <div className="flex flex-col items-enter justify-center h-[33px] w-[33px] p-2.5 bg-white-A700 shadow-md rounded-[16px] hover:bg-red-100 transition-all duration-300"
-                        onClick={() => decreaseQuatity(food.id)}>
+                      <div
+                        className="flex flex-col items-enter justify-center h-[33px] w-[33px] p-2.5 bg-white-A700 shadow-md rounded-[16px] hover:bg-red-100 transition-all duration-300"
+                        onClick={() => decreaseQuatity(food.id)}
+                      >
                         <Img
                           src="images/img_vector_25.svg"
                           alt="image"
@@ -101,8 +103,10 @@ export default function OnlineMenu({
                     <Text as="p" className="!text-gray-900 !text-[16.62px]">
                       {quantityOfItem(food.foodName)}
                     </Text>
-                    <div className="flex flex-col items-center justify-center h-[33px] w-[33px] bg-white-A700 shadow-sm rounded-[16px] hover:bg-green-100 transition-all duration-300"
-                      onClick={() => increaseQuatity(food.id)}>
+                    <div
+                      className="flex flex-col items-center justify-center h-[33px] w-[33px] bg-white-A700 shadow-sm rounded-[16px] hover:bg-green-100 transition-all duration-300"
+                      onClick={() => increaseQuatity(food.id)}
+                    >
                       <Img
                         src="images/img_group_7721.svg"
                         alt="image_one"
@@ -117,37 +121,37 @@ export default function OnlineMenu({
         </div>
       </div>
       <div className="flex flex-row justify-center w-full items-center     ">
-                  <div className="flex flex-row gap-10">
-                    <Button
-                      onClick={prevFoods}
-                      disabled={curr <= 0}
-                      color="blue_gray_100_02"
-                      size="sm"
-                      className={`tracking-[-0.50px] font-inter font-semibold min-w-[80px] rounded transition-all duration-300 
+        <div className="flex flex-row gap-10">
+          <Button
+            onClick={prevFoods}
+            disabled={curr <= 0}
+            color="blue_gray_100_02"
+            size="sm"
+            className={`tracking-[-0.50px] font-inter font-semibold min-w-[80px] rounded transition-all duration-300 
              ${
                curr <= 0
                  ? "bg-gray-400 cursor-not-allowed"
                  : "bg-blue-500 hover:bg-blue-700 cursor-pointer"
              }`}
-                    >
-                      Prev
-                    </Button>
-                    <Button
-                      onClick={nextFoods}
-                      disabled={next >= displayFoods.length}
-                      color="blue_gray_100_02"
-                      size="sm"
-                      className={`tracking-[-0.50px] font-inter font-semibold min-w-[80px] rounded transition-all duration-300 
+          >
+            Prev
+          </Button>
+          <Button
+            onClick={nextFoods}
+            disabled={next >= displayFoods.length}
+            color="blue_gray_100_02"
+            size="sm"
+            className={`tracking-[-0.50px] font-inter font-semibold min-w-[80px] rounded transition-all duration-300 
              ${
                next >= displayFoods.length
                  ? "bg-gray-400 cursor-not-allowed"
                  : " bg-blue-500 hover:bg-blue-700 cursor-pointer"
              }`}
-                    >
-                      Next
-                    </Button>
-                  </div>
-                </div>
+          >
+            Next
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }
